@@ -50,6 +50,7 @@ shader_parameter/max_radius = 0.815
 [node name="Desktop3D" type="Node3D" unique_id=2131246589]
 
 [node name="SubViewport3" type="SubViewport" parent="." unique_id=331482955]
+size = Vector2i(1152, 648)
 
 [node name="SubViewport" type="SubViewport" parent="SubViewport3" unique_id=445447815]
 size = Vector2i(1152, 648)
