@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cq4gxtstimund"]
+
+[ext_resource type="Shader" uid="uid://ckmmnovmt18g6" path="res://Shaders/diseringfull.gdshader" id="1_mw6sl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ifs7"]
+metallic = 0.23
+stencil_flags = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_cub8s"]
+lightmap_size_hint = Vector2i(22, 28)
+material = SubResource("StandardMaterial3D_7ifs7")
+size = Vector3(2.21, 1, 1.215)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ogdd7"]
+lightmap_size_hint = Vector2i(22, 28)
+material = SubResource("StandardMaterial3D_7ifs7")
+flip_faces = true
+size = Vector3(2.21, 4.3, 3.09)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_74upo"]
+shader = ExtResource("1_mw6sl")
+shader_parameter/dither_repeat = 3.325
+shader_parameter/dither_strength = 64.215
+shader_parameter/min_dither_brightness = 0.0
+shader_parameter/color_a = Vector4(0, 0, 0, 1)
+shader_parameter/color_b = Vector4(0.6, 0.6, 0.6, 1)
+shader_parameter/max_radius = 0.775
+
+[node name="Dithering" type="SubViewport" unique_id=1856546249]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Table" type="MeshInstance3D" parent="." unique_id=651194331]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5218965, 0.3001325)
+mesh = SubResource("BoxMesh_cub8s")
+
+[node name="Walls" type="MeshInstance3D" parent="." unique_id=352428576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1837907, 1.2598352)
+mesh = SubResource("BoxMesh_ogdd7")
+
+[node name="MainCamera" type="Camera3D" parent="." unique_id=556988335]
+transform = Transform3D(1, 0, 0, 0, 0.112041235, 0.9937036, 0, -0.9937036, 0.112041235, 0, 2.5051422, 0.39595973)
+cull_mask = 1023
+fov = 46.0
+
+[node name="DistheringShader" type="ColorRect" parent="." unique_id=1047249506]
+show_behind_parent = true
+light_mask = 0
+material = SubResource("ShaderMaterial_74upo")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

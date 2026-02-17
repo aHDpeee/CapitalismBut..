@@ -1,8 +1,5 @@
 extends Node3D
 
-func _ready() -> void:
-	pass
-
 var ans3 = []
 func words(ans, perk: int, object: MeshInstance3D):
 	
@@ -32,7 +29,3 @@ func words(ans, perk: int, object: MeshInstance3D):
 func check(object: MeshInstance3D):
 	if object.mesh.text.to_lower() in ans3:
 		return true
-
-func _process(delta: float) -> void:
-	pass
-	

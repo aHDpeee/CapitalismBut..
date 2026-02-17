@@ -1,27 +1,42 @@
-[gd_scene format=3 uid="uid://duufhnq3rhj5k"]
+[gd_scene format=3 uid="uid://b5t340i1ok5bv"]
 
-[ext_resource type="Script" uid="uid://b4adx3wdyum8b" path="res://Scripts/words.gd" id="1_1b8nx"]
-[ext_resource type="PackedScene" uid="uid://du2s4t1t1qesy" path="res://Scenes/node_3d.tscn" id="1_s8mwy"]
+[ext_resource type="Script" uid="uid://bnw7k6aamnibc" path="res://Scripts/words.gd" id="1_1b8nx"]
+[ext_resource type="PackedScene" uid="uid://cj4vatrbmsoto" path="res://Scenes/node_3d.tscn" id="1_s8mwy"]
+[ext_resource type="PackedScene" uid="uid://canodryngwne8" path="res://Scenes/typing_area.tscn" id="3_4sr8l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ccgj1"]
+shading_mode = 0
+stencil_flags = 2
 
 [sub_resource type="TextMesh" id="TextMesh_1b8nx"]
+material = SubResource("StandardMaterial3D_ccgj1")
+text = "text before
+any text"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s6xkr"]
+albedo_color = Color(0, 0, 0, 1)
+stencil_flags = 2
 
 [sub_resource type="TextMesh" id="TextMesh_ynwrw"]
+material = SubResource("StandardMaterial3D_s6xkr")
+text = "text after
+text
+before any text"
 
 [node name="Words" type="Node3D" unique_id=726910023]
 script = ExtResource("1_1b8nx")
 
 [node name="Node3D" parent="." unique_id=542935317 instance=ExtResource("1_s8mwy")]
 
-[node name="WordsMesh" type="MeshInstance3D" parent="." unique_id=251481102]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+[node name="ToType" type="MeshInstance3D" parent="." unique_id=251481102]
+transform = Transform3D(1.792131, 1.0572528, -1.0595793, 0.257018, 1.4110041, 1.8426162, 1.4745961, -1.5308523, 0.96658283, -0.17703009, 0.9041748, 0.28324798)
+layers = 1024
 mesh = SubResource("TextMesh_1b8nx")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1463390120]
-transform = Transform3D(0.9659259, 0, 0.25881907, 0, 1, 0, -0.25881907, 0, 0.9659258, -1, 0, 1.9561882)
-fov = 114.67353
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=967323767]
-
-[node name="LineEditMesh" type="MeshInstance3D" parent="." unique_id=282120219]
-transform = Transform3D(1.2557036, 0, 0.33646473, 0, 1.3, 0, -0.33646473, 0, 1.2557036, -2.1332755, 0, 1.285863)
+[node name="JustTyped" type="MeshInstance3D" parent="." unique_id=282120219]
+transform = Transform3D(1.2149669, -0.46244496, -2.0214108e-08, 0, -5.6824796e-08, 1.2999997, -0.46244496, -1.2149669, -5.3107886e-08, -2.6798904, 0, 0.6787009)
+layers = 1024
 mesh = SubResource("TextMesh_ynwrw")
+
+[node name="TypingArea" parent="." unique_id=1747342196 instance=ExtResource("3_4sr8l")]
+transform = Transform3D(0.67773736, 0, -3.6308935, 0, 1, 0, 2.4273827, 0, 1.0137637, -2.6059337, -0.07951486, 0.7242411)
