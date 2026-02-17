@@ -1,13 +1,13 @@
 extends Node3D
 
 func _ready() -> void:
-	words(1)
+	pass
 
-func words(perk: int):
+var ans3 = []
+func words(ans, perk: int, object: MeshInstance3D):
 	
-	var ans = ['perpetuum', 'rotation', 'rejection', 'fighter', 'magnetometr', 'sight']
-	var ans3 = []
-	
+	#var ans = ['perpetuum', 'rotation', 'rejection', 'fighter', 'magnetometr', 'sight']
+	ans3 = []
 	while len(ans3) < 3:
 		var n = randi() % len(ans)
 		if ans[n] not in ans3:
@@ -27,9 +27,10 @@ func words(perk: int):
 			if x in nums:
 				i[x] = '_'
 		s+=i+'\n'
-	$Label.set_text(s)
+	object.mesh.text = s
 	
-	if $LineEdit.get_text().to_lower() in ans3:
+func check(object: MeshInstance3D):
+	if object.mesh.text.to_lower() in ans3:
 		return true
 
 func _process(delta: float) -> void:

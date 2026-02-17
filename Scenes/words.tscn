@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://duufhnq3rhj5k"]
+
+[ext_resource type="Script" uid="uid://b4adx3wdyum8b" path="res://Scripts/words.gd" id="1_1b8nx"]
+[ext_resource type="PackedScene" uid="uid://du2s4t1t1qesy" path="res://Scenes/node_3d.tscn" id="1_s8mwy"]
+
+[sub_resource type="TextMesh" id="TextMesh_1b8nx"]
+
+[sub_resource type="TextMesh" id="TextMesh_ynwrw"]
+
+[node name="Words" type="Node3D" unique_id=726910023]
+script = ExtResource("1_1b8nx")
+
+[node name="Node3D" parent="." unique_id=542935317 instance=ExtResource("1_s8mwy")]
+
+[node name="WordsMesh" type="MeshInstance3D" parent="." unique_id=251481102]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+mesh = SubResource("TextMesh_1b8nx")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1463390120]
+transform = Transform3D(0.9659259, 0, 0.25881907, 0, 1, 0, -0.25881907, 0, 0.9659258, -1, 0, 1.9561882)
+fov = 114.67353
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=967323767]
+
+[node name="LineEditMesh" type="MeshInstance3D" parent="." unique_id=282120219]
+transform = Transform3D(1.2557036, 0, 0.33646473, 0, 1.3, 0, -0.33646473, 0, 1.2557036, -2.1332755, 0, 1.285863)
+mesh = SubResource("TextMesh_ynwrw")

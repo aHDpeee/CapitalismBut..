@@ -1,16 +1,6 @@
-[gd_scene format=3 uid="uid://du2s4t1t1qesy"]
+[gd_scene format=3 uid="uid://cj4vatrbmsoto"]
 
 [ext_resource type="Script" uid="uid://bnaw0odsrh5v1" path="res://Scripts/label.gd" id="1_7q7q3"]
 
 [node name="Node3D" type="Node3D" unique_id=542935317]
 script = ExtResource("1_7q7q3")
-
-[node name="Label" type="Label" parent="." unique_id=749542136]
-offset_left = 589.0
-offset_top = 1.0
-offset_right = 970.0
-offset_bottom = 232.0
-
-[node name="LineEdit" type="LineEdit" parent="." unique_id=2114400871]
-offset_right = 501.0
-offset_bottom = 52.0
