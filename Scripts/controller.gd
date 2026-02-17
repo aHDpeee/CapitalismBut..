@@ -7,11 +7,12 @@ var keysstack = []
 func shouldBeKeysArr(str):
 	var c = []
 	if str is String:
-		if ";" in str:
-			for x in str.split(";"): c.append(x)
+		if "&" in str:
+			for x in str.split("&"): c.append(x)
 		else:
 			for x in str: c.append(x)
-	return c
+		return c
+	return str
 
 func inStack(str: String):
 	str = shouldBeKeysArr(str)
@@ -41,15 +42,18 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
-		var c = (String.chr(event.unicode) if event.unicode else event.as_text()).to_lower()
+		#var c = (String.chr(event.unicode) if event.unicode else event.as_text()).to_lower()
+		var c = String.chr(event.keycode).to_lower()
 		#print(event.get_keycode_with_modifiers())
 		if event.is_pressed():
 			keysstack.remove_at(0); keysstack.append(c)
 			if c not in keyspressed:
+				#print(c, String.chr(event.keycode), keyspressed)
 				keyspressed.append(c)
 			#print_debug(keyspressed)
 			#print_debug(keysstack)
 		else:
+			#print(c, String.chr(event.keycode), keyspressed)
 			keyspressed.erase(c)
 		if event.is_pressed() and not event.is_echo():
 			if arePressed("asd"): print("left")

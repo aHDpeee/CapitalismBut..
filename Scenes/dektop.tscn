@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cbw4j46sdpmei"]
 
-[ext_resource type="Script" uid="uid://brdi6knllhicy" path="res://Scenes/controller.gd" id="1_st1t8"]
+[ext_resource type="Script" uid="uid://brdi6knllhicy" path="res://Scripts/controller.gd" id="1_st1t8"]
 
 [node name="Dektop" type="Control" unique_id=20224935]
 layout_mode = 3

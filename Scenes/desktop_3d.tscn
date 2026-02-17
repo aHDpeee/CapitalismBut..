@@ -8,6 +8,12 @@ ambient_light_source = 2
 ambient_light_color = Color(0.30200383, 0.30200383, 0.30200383, 1)
 ambient_light_energy = 0.23
 
+[sub_resource type="BoxMesh" id="BoxMesh_74upo"]
+lightmap_size_hint = Vector2i(21, 27)
+flip_faces = true
+add_uv2 = true
+size = Vector3(2.21, 1, 1.215)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_74upo"]
 render_priority = 1
 transparency = 1
@@ -30,42 +36,53 @@ lightmap_size_hint = Vector2i(22, 28)
 material = SubResource("StandardMaterial3D_7ifs7")
 size = Vector3(2.21, 1, 1.215)
 
-[sub_resource type="BoxMesh" id="BoxMesh_74upo"]
-flip_faces = true
-add_uv2 = true
-size = Vector3(2.21, 1, 1.215)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_74upo"]
 shader = ExtResource("1_cub8s")
-shader_parameter/dither_repeat = 3.315
-shader_parameter/dither_strength = 25.27
+shader_parameter/dither_repeat = 2.41
+shader_parameter/dither_strength = 58.38
 shader_parameter/min_dither_brightness = 0.0
 shader_parameter/color_a = Vector4(0, 0, 0, 1)
 shader_parameter/color_b = Vector4(0.6, 0.6, 0.6, 1)
-shader_parameter/max_radius = 0.71
+shader_parameter/max_radius = 0.815
+
+[sub_resource type="Environment" id="Environment_cub8s"]
 
 [node name="Desktop3D" type="Node3D" unique_id=2131246589]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1684677071]
+[node name="SubViewport3" type="SubViewport" parent="." unique_id=331482955]
+
+[node name="SubViewport" type="SubViewport" parent="SubViewport3" unique_id=445447815]
+size = Vector2i(1152, 648)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewport3/SubViewport" unique_id=1684677071]
 environment = SubResource("Environment_sfw57")
 
-[node name="Table" type="MeshInstance3D" parent="." unique_id=2009841041]
+[node name="Walls" type="MeshInstance3D" parent="SubViewport3/SubViewport" unique_id=490974981]
+transform = Transform3D(1.035, 0, 0, 0, 1.035, 0, 0, 0, 1.035, 0, 0, 0.27606297)
+layers = 1024
+mesh = SubResource("BoxMesh_74upo")
+
+[node name="Table" type="MeshInstance3D" parent="SubViewport3/SubViewport" unique_id=2009841041]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3001325)
 mesh = SubResource("BoxMesh_cub8s")
 
-[node name="Walls" type="MeshInstance3D" parent="." unique_id=490974981]
-transform = Transform3D(1.035, 0, 0, 0, 1.035, 0, 0, 0, 1.035, 0, 0, 0.27606297)
-mesh = SubResource("BoxMesh_74upo")
+[node name="ColorRect2" type="ColorRect" parent="SubViewport3/SubViewport/Table" unique_id=46156237]
+visible = false
+show_behind_parent = true
+light_mask = 0
+material = SubResource("ShaderMaterial_74upo")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1706257655]
+[node name="MainCamera" type="Camera3D" parent="SubViewport3/SubViewport" unique_id=1706257655]
 transform = Transform3D(1, 0, 0, 0, 0.112041235, 0.9937036, 0, -0.9937036, 0.112041235, 0, 1.5609162, 0.38106)
+cull_mask = 1023
 fov = 72.27873
 
-[node name="Camera3D2" type="Camera3D" parent="." unique_id=590548539]
-transform = Transform3D(0.23842925, -0.2868964, 0.92781574, 0.10069182, 0.95752263, 0.2702066, -0.9659258, 0.028998293, 0.2571895, 1.8261788, 1.5609163, 0.668218)
-fov = 115.013016
-
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=177814653]
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewport3/SubViewport" unique_id=177814653]
 transform = Transform3D(1, 0, 0, 0, -0.14157511, 0.98992753, 0, -0.98992753, -0.14157511, 0, 3.1866171, 0.46919906)
 light_energy = 0.925
 distance_fade_begin = 0.0
@@ -75,12 +92,24 @@ spot_attenuation = 1.38
 spot_angle = 33.91
 spot_angle_attenuation = 17.753084
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1117750314]
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport3/SubViewport" unique_id=1117750314]
+layer = -1
+visible = false
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=399444534]
+[node name="ColorRect" type="ColorRect" parent="SubViewport3/SubViewport/CanvasLayer" unique_id=399444534]
 material = SubResource("ShaderMaterial_74upo")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="SubViewport2" type="SubViewport" parent="SubViewport3" unique_id=1379325841]
+size = Vector2i(1152, 648)
+size_2d_override_stretch = true
+
+[node name="OverCamera" type="Camera3D" parent="SubViewport3/SubViewport2" unique_id=959612186]
+transform = Transform3D(1, 0, 0, 0, 0.112041235, 0.9937036, 0, -0.9937036, 0.112041235, 0, 1.5609162, 0.38106)
+cull_mask = 1047552
+environment = SubResource("Environment_cub8s")
+fov = 72.27873
