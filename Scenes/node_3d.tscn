@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ddefxkcmmeeu8"]
+
+[ext_resource type="Script" uid="uid://bnaw0odsrh5v1" path="res://label.gd" id="1_a202f"]
+
+[node name="Node3D" type="Node3D" unique_id=542935317]
+script = ExtResource("1_a202f")
+
+[node name="Label" type="Label" parent="." unique_id=749542136]
+offset_left = 589.0
+offset_top = 1.0
+offset_right = 970.0
+offset_bottom = 232.0
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=2114400871]
+offset_right = 501.0
+offset_bottom = 52.0
