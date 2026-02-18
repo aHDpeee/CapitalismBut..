@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://0f4lmu0a24hj"]
+
+[ext_resource type="Script" uid="uid://bb7wsabb41fjs" path="res://Scripts/dialog.gd" id="1_irs7l"]
+
+[node name="Node3D" type="Node3D" unique_id=938983498]
+script = ExtResource("1_irs7l")
+
+[node name="DialogTextLabel" type="RichTextLabel" parent="." unique_id=1667257703]
+offset_top = 480.0
+offset_right = 1151.0
+offset_bottom = 648.0
+
+[node name="ItemList" type="ItemList" parent="." unique_id=275995518]
+offset_left = 771.0
+offset_top = 1.0
+offset_right = 1151.0
+offset_bottom = 87.0
