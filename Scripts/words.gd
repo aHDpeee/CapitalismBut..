@@ -1,14 +1,15 @@
 extends Node3D
 
 var s = '' 
-var dic = ["GIVE", "BUY", "SELL", "NOW", "START", "MONEY", "MUST", "MORE", "WAITING"]
+var dic = {"LIVE":"GIVE", "GUY":"BUY", "BELL":"SELL", "WOW":"NOW", "MART":"START", "HONEY":"MONEY", \
+	"JUST":"MUST", "LORE":"MORE", "BAITING":"WAITING"}
 var banned = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p',
 	'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l',
 	'z', 'x', 'c', 'v', 'b', 'n', 'm', 'space']
 
 func _ready() -> void:
 	#AddWords(['perpetuum', 'rotation', 'rejection', 'fighter', 'magnetometr', 'sight'], 1, $ToType)
-	AddWords(dic, 1, $ToType)
+	AddWords(dic.values(), 1, $ToType)
 
 var ans3 = []
 func AddWords(ans, perk: int, object: MeshInstance3D):
@@ -49,6 +50,5 @@ func _input(event: InputEvent) -> void:
 			s[-1] = ''
 		$JustTyped.mesh.text = s.to_lower()
 		if checkWords($JustTyped):
-			print_debug('correct')
 			s = ''
-			AddWords(dic, 1, $ToType)
+			AddWords(dic.values(), 1, $ToType)

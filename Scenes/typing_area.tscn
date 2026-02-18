@@ -1,38 +1,58 @@
 [gd_scene format=3 uid="uid://canodryngwne8"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4sr8l"]
-render_priority = 1
-transparency = 1
-shading_mode = 0
-albedo_color = Color(0, 0, 0, 1)
-grow = true
-grow_amount = 0.423
-stencil_mode = 3
-stencil_flags = 1
-stencil_compare = 5
-metadata/_stencil_owned = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cub8s"]
-next_pass = SubResource("StandardMaterial3D_4sr8l")
-shading_mode = 0
-stencil_mode = 1
-stencil_flags = 2
-stencil_outline_thickness = 0.423
-
-[sub_resource type="BoxMesh" id="BoxMesh_s6xkr"]
-material = SubResource("StandardMaterial3D_cub8s")
-size = Vector3(0.66, 0.08, 0.51)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_syne4"]
 size = Vector3(0.69976807, 0.3885498, 0.5358887)
 
-[node name="TypingArea" type="MeshInstance3D" unique_id=1747342196]
-transform = Transform3D(0.67773736, 0, -3.6308937, 0, 1, 0, 2.4273827, 0, 1.0137637, 0, 0, 0)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nbscg"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+stencil_flags = 2
+stencil_outline_thickness = 0.265
+
+[sub_resource type="BoxMesh" id="BoxMesh_payhe"]
+lightmap_size_hint = Vector2i(9, 10)
+material = SubResource("StandardMaterial3D_nbscg")
+flip_faces = true
+add_uv2 = true
+size = Vector3(0.66, 0.08, 0.51)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cub8s"]
+shading_mode = 0
+stencil_flags = 2
+stencil_outline_thickness = 0.265
+
+[sub_resource type="BoxMesh" id="BoxMesh_s6xkr"]
+lightmap_size_hint = Vector2i(9, 10)
+material = SubResource("StandardMaterial3D_cub8s")
+flip_faces = true
+add_uv2 = true
+size = Vector3(0.66, 0.08, 0.51)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nbscg"]
+size = Vector3(0.69976807, 0.07280731, 0.5358887)
+
+[node name="TypingArea" type="StaticBody3D" unique_id=1167680491]
+physics_interpolation_mode = 2
+transform = Transform3D(0.2689198, 0, -0.96316254, 0, 1, 0, 0.96316254, 0, 0.2689198, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1603875930]
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1721628196]
+transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0.0022888335, 0.0711267, 0.0006103218)
+shape = SubResource("BoxShape3D_syne4")
+
+[node name="outline" type="MeshInstance3D" parent="." unique_id=761808946]
+transform = Transform3D(1.055, 0, 0, 0, 1.055, 0, 0, 0, 1.055, 0, 0, 0)
+layers = 1024
+mesh = SubResource("BoxMesh_payhe")
+
+[node name="Area" type="MeshInstance3D" parent="." unique_id=502044405]
+transform = Transform3D(0.88999987, 0, 0, 0, 0.89, 0, 0, 0, 0.88999987, 0, 0, 0)
 layers = 1024
 mesh = SubResource("BoxMesh_s6xkr")
 
-[node name="Area3D" type="Area3D" parent="." unique_id=1603875930]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1721628196]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0022888333, 0.0711267, 0.00061032176)
-shape = SubResource("BoxShape3D_syne4")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1745383827]
+transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0.0022888347, 0.00068068504, 0.00061032205)
+shape = SubResource("BoxShape3D_nbscg")

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://41dc8xr88c7j"]
+
+[ext_resource type="PackedScene" uid="uid://cq4gxtstimund" path="res://Scenes/dithering.tscn" id="1_fbpbs"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cub8s"]
+
+[node name="Desktop3D" type="Node3D" unique_id=2131246589]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=177814653]
+transform = Transform3D(1, 0, 0, 0, -0.14157511, 0.98992753, 0, -0.98992753, -0.14157511, 0, 3.1866171, 0.46919906)
+light_energy = 0.925
+distance_fade_begin = 0.0
+distance_fade_shadow = 4096.0
+spot_range = 6.839
+spot_attenuation = 2.71
+spot_angle = 65.73
+spot_angle_attenuation = 5.2780128
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=741493921]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06644142, 1.9988706, 0.77108467)
+light_energy = 1.94
+light_indirect_energy = 8.295
+omni_range = 0.849
+omni_attenuation = 3.763
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=473255011]
+material = SubResource("CanvasItemMaterial_cub8s")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Dithering" parent="SubViewportContainer" unique_id=1856546249 instance=ExtResource("1_fbpbs")]
+
+[node name="Workspace" type="SubViewport" parent="SubViewportContainer" unique_id=278021505]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="OverCamera" type="Camera3D" parent="SubViewportContainer/Workspace" unique_id=956014168]
+transform = Transform3D(1, 0, 0, 0, 0.112041235, 0.9937036, 0, -0.9937036, 0.112041235, 0, 2.5017164, 0.39595973)
+cull_mask = 1047552
+fov = 46.0

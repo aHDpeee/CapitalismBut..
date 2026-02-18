@@ -1,8 +1,8 @@
-extends Control
+extends Node
 
-var keyspressed = []
+@export var keyspressed = []
 @export var keysstacklen = 10
-var keysstack = []
+@export var keysstack = []
 
 func shouldBeKeysArr(str):
 	var c = []
@@ -14,12 +14,22 @@ func shouldBeKeysArr(str):
 		return c
 	return str
 
-func inStack(str: String):
+func inStackInPlace(str: String):
 	str = shouldBeKeysArr(str)
 	
 	var l = len(str)
-	for x in range(1, len(str) + 1):
+	for x in range(1, l + 1):
 		if keysstack[keysstacklen-x] != str[l-x]:
+			return false
+	return true and len(str)
+func inStack(str : String):
+	var l = len(str)
+	var c = []
+	for x in range(1, l + 1):
+		c.append(keysstack[keysstacklen-x])
+	#print(c)
+	for x in str:
+		if x not in c:
 			return false
 	return true and len(str)
 func arePressed(str):
@@ -46,7 +56,8 @@ func _input(event: InputEvent) -> void:
 		var c = String.chr(event.keycode).to_lower()
 		#print(event.get_keycode_with_modifiers())
 		if event.is_pressed():
-			keysstack.remove_at(0); keysstack.append(c)
+			if keysstack[-1] != c:
+				keysstack.remove_at(0); keysstack.append(c)
 			if c not in keyspressed:
 				#print(c, String.chr(event.keycode), keyspressed)
 				keyspressed.append(c)
@@ -55,6 +66,6 @@ func _input(event: InputEvent) -> void:
 		else:
 			#print(c, String.chr(event.keycode), keyspressed)
 			keyspressed.erase(c)
-		if event.is_pressed() and not event.is_echo():
-			if arePressed("asd"): print("left")
-			if arePressed("l;'"): print("right")	
+		#if event.is_pressed() and not event.is_echo():
+			#if arePressed("asd"): print("left")
+			#if arePressed("l;'"): print("right")	
