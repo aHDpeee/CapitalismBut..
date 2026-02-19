@@ -3,13 +3,41 @@
 [ext_resource type="Script" uid="uid://bp5lk013obpue" path="res://make_view.gd" id="1_20200"]
 [ext_resource type="PackedScene" uid="uid://canodryngwne8" path="res://Scenes/typing_area.tscn" id="2_k6k8p"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_20200"]
+size = Vector3(0.08812857, 0.05543518, 0.108795166)
+
 [node name="makeView" type="Node3D" unique_id=1882131718]
 script = ExtResource("1_20200")
 
 [node name="TypingArea" parent="." unique_id=1747342196 instance=ExtResource("2_k6k8p")]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1785864042]
 transform = Transform3D(1, 0, 0, 0, 0.03212598, 0.99948376, 0, -0.99948376, 0.03212598, 2.3841858e-07, 0.5465896, -0.056916952)
 
 [node name="Letters" type="Node3D" parent="." unique_id=202657891]
+
+[node name="View" type="Node3D" parent="." unique_id=267471854]
+visible = false
+
+[node name="G" type="Area3D" parent="View" unique_id=905891586]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="View/G" unique_id=1970636454]
+transform = Transform3D(-0.09855558, 0, 0.99513155, 0, 1, 0, -0.99513155, 0, -0.09855558, -0.18291076, 0, -0.11189599)
+shape = SubResource("BoxShape3D_20200")
+
+[node name="I" type="Area3D" parent="View" unique_id=621223063]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="View/I" unique_id=1267137313]
+transform = Transform3D(0.22471291, 0, 0.974425, 0, 1, 0, -0.974425, 0, 0.22471291, 0.14204901, 0, -0.105103545)
+shape = SubResource("BoxShape3D_20200")
+
+[node name="V" type="Area3D" parent="View" unique_id=1734694764]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="View/V" unique_id=711437431]
+transform = Transform3D(-0.0053407135, 0, 0.99998575, 0, 1, 0, -0.99998575, 0, -0.0053407135, -0.0012739301, 0, 0.122302294)
+shape = SubResource("BoxShape3D_20200")
+
+[node name="E" type="Area3D" parent="View" unique_id=1211570445]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="View/E" unique_id=1963566354]
+shape = SubResource("BoxShape3D_20200")

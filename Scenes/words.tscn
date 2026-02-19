@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bnw7k6aamnibc" path="res://Scripts/words.gd" id="1_1b8nx"]
 [ext_resource type="PackedScene" uid="uid://cj4vatrbmsoto" path="res://Scenes/node_3d.tscn" id="1_s8mwy"]
-[ext_resource type="PackedScene" uid="uid://canodryngwne8" path="res://Scenes/typing_area.tscn" id="3_4sr8l"]
+[ext_resource type="PackedScene" uid="uid://c3rfd0crj1xfs" path="res://Scenes/make_view.tscn" id="3_4sr8l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ccgj1"]
 shading_mode = 0
@@ -35,8 +35,9 @@ mesh = SubResource("TextMesh_1b8nx")
 
 [node name="JustTyped" type="MeshInstance3D" parent="." unique_id=282120219]
 transform = Transform3D(1.2149669, -0.46244496, -2.0214108e-08, 0, -5.6824796e-08, 1.2999997, -0.46244496, -1.2149669, -5.3107886e-08, -2.6798904, 0, 0.6787009)
-layers = 1024
+visible = false
+layers = 0
 mesh = SubResource("TextMesh_ynwrw")
 
-[node name="TypingArea" parent="." unique_id=1747342196 instance=ExtResource("3_4sr8l")]
-transform = Transform3D(2.87504, 0, 0.8027257, 0, 2.985, 0, -0.8027257, 0, 2.87504, -2.6059337, -0.07951486, 0.7242411)
+[node name="makeView" parent="." unique_id=1882131718 instance=ExtResource("3_4sr8l")]
+transform = Transform3D(2.8468843, 0, 1.175436, 0, 3.08, 0, -1.175436, 0, 2.8468843, -2.5711083, 0, 0.7491553)

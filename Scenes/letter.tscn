@@ -28,7 +28,7 @@ font_size = 10
 collision_layer = 257
 collision_mask = 257
 physics_material_override = SubResource("PhysicsMaterial_ka838")
-constant_force = Vector3(0, -20.125, 0)
+constant_force = Vector3(0, -9.9, 0)
 script = ExtResource("1_ka838")
 
 [node name="Collision" type="CollisionShape3D" parent="." unique_id=30077847]
@@ -36,8 +36,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0066645443, -0.011688232, 
 shape = SubResource("BoxShape3D_ka838")
 
 [node name="Shape" type="MeshInstance3D" parent="." unique_id=608263764]
+layers = 33792
 mesh = SubResource("TextMesh_sqwnb")
 
 [node name="Outline" type="MeshInstance3D" parent="Shape" unique_id=581466753]
 transform = Transform3D(1.135, 0, 0, 0, 1.135, 0, 0, 0, 1.135, 0, 0, 0)
+layers = 33792
 mesh = SubResource("TextMesh_xbl6t")
