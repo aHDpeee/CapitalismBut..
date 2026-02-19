@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c3rfd0crj1xfs"]
 
-[ext_resource type="Script" uid="uid://bp5lk013obpue" path="res://make_view.gd" id="1_20200"]
+[ext_resource type="Script" uid="uid://bp5lk013obpue" path="res://Scripts/make_view.gd" id="1_20200"]
 [ext_resource type="PackedScene" uid="uid://canodryngwne8" path="res://Scenes/typing_area.tscn" id="2_k6k8p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_20200"]
@@ -17,7 +17,6 @@ transform = Transform3D(1, 0, 0, 0, 0.03212598, 0.99948376, 0, -0.99948376, 0.03
 [node name="Letters" type="Node3D" parent="." unique_id=202657891]
 
 [node name="View" type="Node3D" parent="." unique_id=267471854]
-visible = false
 
 [node name="G" type="Area3D" parent="View" unique_id=905891586]
 

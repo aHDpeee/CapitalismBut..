@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://batur5ocnkt1e"]
 
-[ext_resource type="Script" uid="uid://hy3pv3kpupif" path="res://word_2_view.gd" id="1_va5rw"]
+[ext_resource type="Script" uid="uid://hy3pv3kpupif" path="res://Scripts/word_2_view.gd" id="1_va5rw"]
 [ext_resource type="PackedScene" uid="uid://canodryngwne8" path="res://Scenes/typing_area.tscn" id="2_3q8vq"]
 
 [node name="word2View" type="Node3D" unique_id=1595958135]
