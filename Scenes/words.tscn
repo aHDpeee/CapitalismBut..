@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bnw7k6aamnibc" path="res://Scripts/words.gd" id="1_1b8nx"]
 [ext_resource type="PackedScene" uid="uid://cj4vatrbmsoto" path="res://Scenes/node_3d.tscn" id="1_s8mwy"]
-[ext_resource type="PackedScene" uid="uid://c3rfd0crj1xfs" path="res://Scenes/make_view.tscn" id="3_4sr8l"]
+[ext_resource type="PackedScene" uid="uid://c3dhm37jbhdx3" path="res://Scenes/make_view.tscn" id="3_4sr8l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ccgj1"]
 shading_mode = 0
