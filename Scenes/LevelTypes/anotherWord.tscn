@@ -10,6 +10,10 @@
 [sub_resource type="ViewportTexture" id="ViewportTexture_f8r4r"]
 viewport_path = NodePath("SubViewportContainer/Workspace/Sprite3D/SubViewport")
 
+[sub_resource type="Environment" id="Environment_pycx8"]
+background_mode = 1
+background_color = Color(0.083392, 0.083392, 0.08339202, 1)
+
 [node name="Desktop3D" type="Node3D" unique_id=2131246589]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=177814653]
@@ -51,7 +55,7 @@ size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/Workspace" unique_id=800006571]
-transform = Transform3D(0.10504759, 0, 0, 0, 0.10504759, 0, 0, 0, 1.887175, 0.00912416, 2.1654646, -0.28283918)
+transform = Transform3D(0.1489268, 0, 0, 0, 0.1489268, 0, 0, 0, 1.887175, -0.10782635, 1.1271188, -0.73043525)
 layers = 33792
 texture = SubResource("ViewportTexture_f8r4r")
 
@@ -62,10 +66,13 @@ size = Vector2i(1235, 512)
 [node name="Dialogue" parent="SubViewportContainer/Workspace/Sprite3D/SubViewport" unique_id=1771129535 instance=ExtResource("2_3riyq")]
 
 [node name="Camera" type="Camera3D" parent="SubViewportContainer/Workspace" unique_id=956014168]
-transform = Transform3D(1, 0, 0, 0, 0.112041235, 0.9937036, 0, -0.9937036, 0.112041235, 0, 2.5017164, 0.39595973)
+transform = Transform3D(1, 0, 0, 0, 0.112041235, 0.9937036, 0, -0.9937036, 0.112041235, 0, 2.5017164, 0.34673297)
 cull_mask = 1047552
 fov = 46.0
 script = ExtResource("2_qiakx")
 
 [node name="Words" parent="SubViewportContainer/Workspace" unique_id=726910023 instance=ExtResource("2_jwpjo")]
-transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0.47566134, 1.093867, 0.09811269)
+transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0.47566134, 1.1528624, -0.017520308)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=329245089]
+environment = SubResource("Environment_pycx8")
