@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://dci8w1g07d1v7" path="res://Scenes/dialog.tscn" id="2_3riyq"]
 [ext_resource type="PackedScene" uid="uid://b5t340i1ok5bv" path="res://Scenes/words.tscn" id="2_jwpjo"]
 [ext_resource type="Script" uid="uid://dv2s4hc4ulhbe" path="res://Scripts/over_camera.gd" id="2_qiakx"]
-[ext_resource type="ArrayMesh" uid="uid://cgyy1o7ilgtnj" path="res://Objects/shop.obj" id="4_pycx8"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cub8s"]
 
@@ -70,7 +69,3 @@ script = ExtResource("2_qiakx")
 
 [node name="Words" parent="SubViewportContainer/Workspace" unique_id=726910023 instance=ExtResource("2_jwpjo")]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0.47566134, 1.093867, 0.09811269)
-
-[node name="Shop" type="MeshInstance3D" parent="SubViewportContainer/Workspace" unique_id=285540498]
-transform = Transform3D(3.3355515, 0, 0, 0, 3.3355515, 0, 0, 0, 1, -0.024271011, -2.3841858e-07, -2.6924605)
-mesh = ExtResource("4_pycx8")
