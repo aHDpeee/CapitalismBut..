@@ -1,8 +1,7 @@
-[gd_scene format=3 uid="uid://c3dhm37jbhdx3"]
+[gd_scene format=3 uid="uid://c3rfd0crj1xfs"]
 
-[ext_resource type="Script" uid="uid://bp5lk013obpue" path="res://make_view.gd" id="1_20200"]
+[ext_resource type="Script" uid="uid://bp5lk013obpue" path="res://Scripts/make_view.gd" id="1_20200"]
 [ext_resource type="PackedScene" uid="uid://canodryngwne8" path="res://Scenes/typing_area.tscn" id="2_k6k8p"]
-[ext_resource type="Script" uid="uid://brlnvtqipf8w" path="res://Scripts/view.gd" id="3_k6k8p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_20200"]
 size = Vector3(0.08812857, 0.05543518, 0.108795166)
@@ -18,31 +17,26 @@ transform = Transform3D(1, 0, 0, 0, 0.03212598, 0.99948376, 0, -0.99948376, 0.03
 [node name="Letters" type="Node3D" parent="." unique_id=202657891]
 
 [node name="View" type="Node3D" parent="." unique_id=267471854]
-script = ExtResource("3_k6k8p")
 
 [node name="G" type="Area3D" parent="View" unique_id=905891586]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10041826, 0, -0.13722558)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="View/G" unique_id=1970636454]
 transform = Transform3D(-0.09855558, 0, 0.99513155, 0, 1, 0, -0.99513155, 0, -0.09855558, -0.18291076, 0, -0.11189599)
 shape = SubResource("BoxShape3D_20200")
 
 [node name="I" type="Area3D" parent="View" unique_id=621223063]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1742801, 2.9802322e-08, -0.14237554)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="View/I" unique_id=1267137313]
 transform = Transform3D(0.22471291, 0, 0.974425, 0, 1, 0, -0.974425, 0, 0.22471291, 0.14204901, 0, -0.105103545)
 shape = SubResource("BoxShape3D_20200")
 
 [node name="V" type="Area3D" parent="View" unique_id=1734694764]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26334363, 0, 0.06321685)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="View/V" unique_id=711437431]
 transform = Transform3D(-0.0053407135, 0, 0.99998575, 0, 1, 0, -0.99998575, 0, -0.0053407135, -0.0012739301, 0, 0.122302294)
 shape = SubResource("BoxShape3D_20200")
 
 [node name="E" type="Area3D" parent="View" unique_id=1211570445]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.255611, 0, 0.17206956)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="View/E" unique_id=1963566354]
 shape = SubResource("BoxShape3D_20200")
