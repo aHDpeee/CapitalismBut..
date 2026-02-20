@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cq4gxtstimund"]
 
+[ext_resource type="Script" uid="uid://dv2s4hc4ulhbe" path="res://Scripts/over_camera.gd" id="1_ji8wt"]
 [ext_resource type="Shader" uid="uid://ckmmnovmt18g6" path="res://Shaders/diseringfull.gdshader" id="1_mw6sl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ifs7"]
@@ -43,6 +44,7 @@ mesh = SubResource("BoxMesh_ogdd7")
 transform = Transform3D(1, 0, 0, 0, 0.112041235, 0.9937036, 0, -0.9937036, 0.112041235, 0, 2.5051422, 0.39595973)
 cull_mask = 1023
 fov = 46.0
+script = ExtResource("1_ji8wt")
 
 [node name="DistheringShader" type="ColorRect" parent="." unique_id=1047249506]
 show_behind_parent = true

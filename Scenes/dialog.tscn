@@ -1,16 +1,66 @@
 [gd_scene format=3 uid="uid://dci8w1g07d1v7"]
 
 [ext_resource type="Script" uid="uid://c6krm2d0ts8br" path="res://Scripts/dialog.gd" id="1_irs7l"]
+[ext_resource type="FontFile" uid="uid://dp5tesm7w4dbp" path="res://Font/Doto-VariableFont_ROND,wght.ttf" id="2_87kay"]
+[ext_resource type="Shader" uid="uid://c61i1fkcn0eb0" path="res://Shaders/invert.gdshader" id="3_u40lh"]
 
-[node name="Node3D" type="Node3D" unique_id=938983498]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ionbg"]
+shader = ExtResource("3_u40lh")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xg2mj"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nas4"]
+
+[node name="Dialogue" type="Control" unique_id=1771129535]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_irs7l")
 
-[node name="DialogTextLabel" type="RichTextLabel" parent="." unique_id=1667257703]
-offset_top = 480.0
-offset_right = 1151.0
-offset_bottom = 648.0
+[node name="Invert" type="ColorRect" parent="." unique_id=1915509639]
+z_index = 15
+material = SubResource("ShaderMaterial_ionbg")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1677824011]
-offset_left = 772.0
-offset_right = 1151.0
-offset_bottom = 162.0
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1251466863]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 164.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="DialogTextLabel" type="RichTextLabel" parent="VBox" unique_id=1667257703]
+custom_minimum_size = Vector2(0, 164.155)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_87kay")
+theme_override_font_sizes/normal_font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxFlat_xg2mj")
+theme_override_styles/background = SubResource("StyleBoxFlat_3nas4")
+
+[node name="Options" type="HBoxContainer" parent="VBox" unique_id=337516120]
+layout_mode = 2
+theme_override_constants/separation = 0

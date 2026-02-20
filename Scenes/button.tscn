@@ -1,10 +1,45 @@
-[gd_scene format=3 uid="uid://bs5ubmo4kx00b"]
+[gd_scene format=3 uid="uid://c0axg7xt21jw6"]
 
-[ext_resource type="Script" uid="uid://xjm4rlrtt8lr" path="res://Scripts/button.gd" id="1_1cmwl"]
+[ext_resource type="FontFile" uid="uid://dp5tesm7w4dbp" path="res://Font/Doto-VariableFont_ROND,wght.ttf" id="1_0kpiu"]
+[ext_resource type="Script" uid="uid://c2fm00rln8e3c" path="res://Scripts/button.gd" id="1_1cmwl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0kpiu"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 20.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_smycg"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iju5o"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_edukx"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svtet"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="Button" type="Button" unique_id=417614439]
 offset_right = 8.0
 offset_bottom = 8.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_0kpiu")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_0kpiu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_smycg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iju5o")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_edukx")
+theme_override_styles/focus = SubResource("StyleBoxFlat_svtet")
 script = ExtResource("1_1cmwl")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
