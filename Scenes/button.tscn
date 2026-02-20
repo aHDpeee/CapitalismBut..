@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bs5ubmo4kx00b"]
+
+[ext_resource type="Script" uid="uid://xjm4rlrtt8lr" path="res://Scripts/button.gd" id="1_1cmwl"]
+
+[node name="Button" type="Button" unique_id=417614439]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_1cmwl")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
