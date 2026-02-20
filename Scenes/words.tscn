@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b5t340i1ok5bv"]
 
 [ext_resource type="Script" uid="uid://bnw7k6aamnibc" path="res://Scripts/words.gd" id="1_1b8nx"]
-[ext_resource type="PackedScene" uid="uid://cj4vatrbmsoto" path="res://Scenes/node_3d.tscn" id="1_s8mwy"]
 [ext_resource type="PackedScene" uid="uid://c3rfd0crj1xfs" path="res://Scenes/make_view.tscn" id="3_4sr8l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ccgj1"]
@@ -10,8 +9,17 @@ stencil_flags = 2
 
 [sub_resource type="TextMesh" id="TextMesh_1b8nx"]
 material = SubResource("StandardMaterial3D_ccgj1")
-text = "text before
-any text"
+text = "wow"
+horizontal_alignment = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4sr8l"]
+shading_mode = 0
+stencil_flags = 2
+
+[sub_resource type="TextMesh" id="TextMesh_s6xkr"]
+material = SubResource("StandardMaterial3D_4sr8l")
+text = "now"
+horizontal_alignment = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s6xkr"]
 albedo_color = Color(0, 0, 0, 1)
@@ -26,12 +34,14 @@ before any text"
 [node name="Words" type="Node3D" unique_id=726910023]
 script = ExtResource("1_1b8nx")
 
-[node name="Node3D" parent="." unique_id=542935317 instance=ExtResource("1_s8mwy")]
-
 [node name="ToType" type="MeshInstance3D" parent="." unique_id=251481102]
-transform = Transform3D(1.792131, 1.0572528, -1.0595793, 0.257018, 1.4110041, 1.8426162, 1.4745961, -1.5308523, 0.96658283, -0.17703009, 0.9041748, 0.28324798)
+transform = Transform3D(1.792131, 1.0572528, -1.0595793, 0.257018, 1.4110041, 1.8426162, 1.4745961, -1.5308523, 0.96658283, 0.08010006, 0.49139237, 0.6802815)
 layers = 1024
 mesh = SubResource("TextMesh_1b8nx")
+
+[node name="ToType" type="MeshInstance3D" parent="ToType" unique_id=944128830]
+layers = 1024
+mesh = SubResource("TextMesh_s6xkr")
 
 [node name="JustTyped" type="MeshInstance3D" parent="." unique_id=282120219]
 transform = Transform3D(1.2149669, -0.46244496, -2.0214108e-08, 0, -5.6824796e-08, 1.2999997, -0.46244496, -1.2149669, -5.3107886e-08, -2.6798904, 0, 0.6787009)
@@ -40,4 +50,4 @@ layers = 0
 mesh = SubResource("TextMesh_ynwrw")
 
 [node name="makeView" parent="." unique_id=1882131718 instance=ExtResource("3_4sr8l")]
-transform = Transform3D(2.8468843, 0, 1.175436, 0, 3.08, 0, -1.175436, 0, 2.8468843, -2.5711083, 0, 0.7491553)
+transform = Transform3D(3.416045, 0, 0.92856705, 0, 3.54, 0, -0.92856705, 0, 3.416045, -2.5069263, 0, 0.64291835)

@@ -9,38 +9,20 @@ var banned = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p',
 	'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l',
 	'z', 'x', 'c', 'v', 'b', 'n', 'm', 'space']
 var activeLetterIndex = -1
+var rightWord : Dictionary
 
 func _ready() -> void:
 	#AddWords(['perpetuum', 'rotation', 'rejection', 'fighter', 'magnetometr', 'sight'], 1, $ToType)
-	AddWords(dic.values(), 1, $ToType)
+	AddWords(dic)
 
-var ans3 = []
-func AddWords(ans : Array, perk: int, object: MeshInstance3D):
-	
-	ans3 = []
-	while len(ans3) < 1:
-		var n = randi() % len(ans)
-		if ans[n] not in ans3:
-			ans3.append(ans[n])
-	#print_debug(ans3)
-	
-	var s = ''
-	for i in ans3:
-		var nums = []
-		
-		while len(nums) < int(len(i)/2 - perk):
-			var x = randi() % len(i)
-			if x not in nums:
-				nums.append(randi() % len(i))
-		
-		for x in range(0, len(i)):
-			if x in nums:
-				i[x] = '_'
-		s+=i+'\n'
-	object.mesh.text = s
+func AddWords(ans : Dictionary, perk: int = 1):
+	var index = randi() % len(ans)
+	$ToType.mesh.text = ans.values()[index]
+	$ToType/ToType.mesh.text = ans.keys()[index]
+	rightWord = {$ToType.mesh.text:$ToType/ToType.mesh.text}
 	
 func checkWords(object: MeshInstance3D):
-	if object.mesh.text.to_upper() in ans3:
+	if object.mesh.text.to_upper() == rightWord.keys()[0]:
 		return true
 
 
@@ -53,7 +35,7 @@ func _input(event: InputEvent) -> void:
 			String.chr(event.keycode).to_lower(), activeLetterIndex-len($ToType.mesh.text)/2, 0,\
 			$makeView/TypingArea.position+Vector3(0,1,0), $makeView/TypingArea.rotation).letter)
 			s += String.chr(event.keycode).to_lower()
-		if event.as_text() == 'Backspace' and activeLetterIndex >= 0:
+		if event.as_text() == 'Backspace' and activeLetterIndex >= 0 and type:
 			$makeView/Letters.remove_child(sMesh[activeLetterIndex])
 			$makeView/Letters.remove_child($makeView/Letters.get_child(activeLetterIndex))
 			activeLetterIndex -= 1
