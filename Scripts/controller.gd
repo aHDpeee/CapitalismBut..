@@ -59,7 +59,7 @@ func _input(event: InputEvent) -> void:
 			if keysstack[-1] != c:
 				keysstack.remove_at(0); keysstack.append(c)
 			if c not in keyspressed:
-				print(c, String.chr(event.keycode), keyspressed)
+				#print(c, String.chr(event.keycode), keyspressed)
 				keyspressed.append(c)
 			#print_debug(keyspressed)
 			#print_debug(keysstack)

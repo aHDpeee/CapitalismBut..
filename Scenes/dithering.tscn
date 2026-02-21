@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://cq4gxtstimund"]
 
-[ext_resource type="Script" uid="uid://dv2s4hc4ulhbe" path="res://Scripts/over_camera.gd" id="1_ji8wt"]
 [ext_resource type="Shader" uid="uid://ckmmnovmt18g6" path="res://Shaders/diseringfull.gdshader" id="1_mw6sl"]
 [ext_resource type="ArrayMesh" uid="uid://bisxun58y1v51" path="res://Objects/room.obj" id="3_mk1wp"]
 
@@ -33,6 +32,11 @@ handle_input_locally = false
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
+[node name="Camera" type="Camera3D" parent="." unique_id=556988335]
+transform = Transform3D(1, 0, 0, 0, 0.112041235, 0.9937036, 0, -0.9937036, 0.112041235, 0, 2.5017164, 0.34673297)
+cull_mask = 1023
+fov = 46.0
+
 [node name="Table" type="MeshInstance3D" parent="." unique_id=651194331]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5218965, 0.3001325)
 visible = false
@@ -43,13 +47,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1837907, 1.2598352)
 visible = false
 mesh = SubResource("BoxMesh_ogdd7")
 
-[node name="MainCamera" type="Camera3D" parent="." unique_id=556988335]
-transform = Transform3D(1, 0, 0, 0, 0.112041235, 0.9937036, 0, -0.9937036, 0.112041235, 0, 2.5017164, 0.34673297)
-cull_mask = 1023
-fov = 46.0
-script = ExtResource("1_ji8wt")
-
 [node name="DistheringShader" type="ColorRect" parent="." unique_id=1047249506]
+visible = false
 show_behind_parent = true
 light_mask = 0
 material = SubResource("ShaderMaterial_74upo")

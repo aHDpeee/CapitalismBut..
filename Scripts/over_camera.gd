@@ -16,17 +16,17 @@ func myTween():
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		if event.is_pressed():
-			print('key')
+			print(status)
 			if Controller.arePressed("/z")   and status== "table":
 				status = "window"; 
 				if t && t.is_running(): t.stop();
-				print("window")
+				print(position)
 				t = myTween()
 				t.tween_property(self, "position", Vector3(0,2.502*0.7,1.2), 1.5)
 				t.tween_property(self, "rotation", Vector3(0,0,0), 1.5)
 				t.play()
-				if Controller.inStack("]q"):
-					pass
+				#if Controller.inStack("]q"):
+					#pass
 		if event.is_released():
 			if t && not Controller.arePressed("/z") and status == "window":
 				status = "table";
@@ -35,6 +35,5 @@ func _input(event: InputEvent) -> void:
 				t.tween_property(self, "position", defPos, 1.5)
 				t.tween_property(self, "rotation", defRot, 1.5)
 				t.play()
-				print("table")
 			
 		
