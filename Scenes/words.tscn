@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://b5t340i1ok5bv"]
 
 [ext_resource type="Script" uid="uid://bnw7k6aamnibc" path="res://Scripts/words.gd" id="1_1b8nx"]
-[ext_resource type="PackedScene" uid="uid://daoontrvc1pda" path="res://Scenes/make_view_original.tscn" id="3_4sr8l"]
+[ext_resource type="Script" uid="uid://bp5lk013obpue" path="res://Scripts/make_view.gd" id="2_s6xkr"]
+[ext_resource type="PackedScene" uid="uid://canodryngwne8" path="res://Scenes/typing_area.tscn" id="3_syne4"]
+[ext_resource type="Script" uid="uid://brlnvtqipf8w" path="res://Scripts/view.gd" id="4_8y860"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ccgj1"]
 shading_mode = 0
@@ -31,6 +33,9 @@ text = "text after
 text
 before any text"
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_y4c83"]
+size = Vector3(0.08812857, 0.05543518, 0.108795166)
+
 [node name="Words" type="Node3D" unique_id=726910023]
 script = ExtResource("1_1b8nx")
 
@@ -49,5 +54,43 @@ visible = false
 layers = 0
 mesh = SubResource("TextMesh_ynwrw")
 
-[node name="makeView" parent="." unique_id=1882131718 instance=ExtResource("3_4sr8l")]
+[node name="makeView" type="Node3D" parent="." unique_id=2071127947]
 transform = Transform3D(3.416045, 0, 0.92856705, 0, 3.54, 0, -0.92856705, 0, 3.416045, -2.5069263, 0, 0.64291835)
+script = ExtResource("2_s6xkr")
+
+[node name="TypingArea" parent="makeView" unique_id=1167680491 instance=ExtResource("3_syne4")]
+
+[node name="Camera3D" type="Camera3D" parent="makeView" unique_id=1667844941]
+transform = Transform3D(1, 0, 0, 0, 0.03212598, 0.99948376, 0, -0.99948376, 0.03212598, 2.3841858e-07, 0.5465896, -0.056916952)
+
+[node name="Letters" type="Node3D" parent="makeView" unique_id=145725851]
+
+[node name="View" type="Node3D" parent="makeView" unique_id=795573009]
+script = ExtResource("4_8y860")
+
+[node name="G" type="Area3D" parent="makeView/View" unique_id=457773290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10041826, 0, -0.13722558)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="makeView/View/G" unique_id=267792302]
+transform = Transform3D(-0.09855558, 0, 0.99513155, 0, 1, 0, -0.99513155, 0, -0.09855558, -0.18291076, 0, -0.11189599)
+shape = SubResource("BoxShape3D_y4c83")
+
+[node name="I" type="Area3D" parent="makeView/View" unique_id=854355851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1742801, 2.9802322e-08, -0.14237554)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="makeView/View/I" unique_id=2101869371]
+transform = Transform3D(0.22471291, 0, 0.974425, 0, 1, 0, -0.974425, 0, 0.22471291, 0.14204901, 0, -0.105103545)
+shape = SubResource("BoxShape3D_y4c83")
+
+[node name="V" type="Area3D" parent="makeView/View" unique_id=448627239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26334363, 0, 0.06321685)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="makeView/View/V" unique_id=201634866]
+transform = Transform3D(-0.0053407135, 0, 0.99998575, 0, 1, 0, -0.99998575, 0, -0.0053407135, -0.0012739301, 0, 0.122302294)
+shape = SubResource("BoxShape3D_y4c83")
+
+[node name="E" type="Area3D" parent="makeView/View" unique_id=263207438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.255611, 0, 0.17206956)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="makeView/View/E" unique_id=828252688]
+shape = SubResource("BoxShape3D_y4c83")

@@ -2,7 +2,7 @@ extends Node3D
 
 var s = '' 
 var sMesh = []
-var type = true
+var type = false
 var dic = {"LIVE":"GIVE", "GUY":"BUY", "BELL":"SELL", "WOW":"NOW", "MART":"START", "HONEY":"MONEY", \
 	"JUST":"MUST", "LORE":"MORE", "BAITING":"WAITING"}
 var banned = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p',
@@ -12,8 +12,11 @@ var activeLetterIndex = -1
 var rightWord : Dictionary
 
 func _ready() -> void:
+	$ToType.mesh.text = ""
+	$ToType/ToType.mesh.text = ""
 	#AddWords(['perpetuum', 'rotation', 'rejection', 'fighter', 'magnetometr', 'sight'], 1, $ToType)
-	AddWords(dic)
+	#AddWords(dic)
+	pass
 
 func AddWords(ans : Dictionary, perk: int = 1):
 	var index = randi() % len(ans)
@@ -41,7 +44,7 @@ func _input(event: InputEvent) -> void:
 			activeLetterIndex -= 1
 			s[-1] = ''
 		$JustTyped.mesh.text = s.to_lower()
-		if checkWords($JustTyped):
+		if type == true and checkWords($JustTyped):
 			$makeView.move = true
 			type = false
 			#s = ''

@@ -6,6 +6,8 @@ var status = "table" # "table"
 var tweens = []
 var cameras = []
 
+signal fixed()
+
 func _ready() -> void:
 	for x in get_parent().get_children():
 		if x is SubViewport:
@@ -21,6 +23,7 @@ func myTween():
 	t.set_ease(Tween.EASE_IN)
 	t.set_trans(Tween.TRANS_QUAD)
 	return t
+	
 	
 func lookAtWindow(camera : Camera3D, t : Tween):
 	status = "window"; 
@@ -47,12 +50,18 @@ func lookAtTable(camera : Camera3D, t : Tween):
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		if event.is_pressed():
-			if Controller.arePressed("/z")   and status== "table":
+			if Controller.arePressed("/z") and not Controller.arePressed(']q') and status== "table":
 				for ct in range(len(cameras)):
 					lookAtWindow(cameras[ct], tweens[ct])
+					
+			if Controller.arePressed("/z]q")   and status== "window":
+				status = 'fixed_window'
+				emit_signal('fixed')
+				
 		if event.is_released():
 			if not Controller.arePressed("/z") and status == "window":
 				for ct in range(len(cameras)):
 					lookAtTable(cameras[ct], tweens[ct])
+		
 			
 		
