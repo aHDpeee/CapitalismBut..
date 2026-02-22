@@ -21,14 +21,22 @@ func _ready() -> void:
 
 func AddWords(ans : Dictionary, perk: int = 1):
 	var index = randi() % len(ans)
-	sMesh = []
-	s = ''
-	type = true
-	activeLetterIndex = 0
+	clear()
 	$ToType.mesh.text = ans.values()[index]
 	$ToType/ToType.mesh.text = ans.keys()[index]
 	rightWord = {$ToType/ToType.mesh.text:$ToType.mesh.text}
+	type = true
 	print(rightWord, ans)
+	
+func clear():
+	sMesh = []
+	s = ''
+	activeLetterIndex = 0
+	
+	for letter in $"makeView/Letters".get_children():
+		if letter is RigidBody3D:
+			letter.queue_free()
+	
 	
 func checkWords(object: MeshInstance3D):
 	if object.mesh.text.to_upper() == rightWord.keys()[0]:

@@ -21,14 +21,14 @@ func f():
 				%cameras.lookAtTable(%cameras.cameras[i], %cameras.tweens[i])
 			%Words.AddWords({"GIVE":"LIVE"})
 		1:
-			if %Words/makeView.get_node("View"):
-				%Words/makeView/View.queue_free()
 			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
 			await %Dialogue.dialog('Hey. What\'s wrong here?')
 			await get_tree().create_timer(2).timeout
 			await %Dialogue.dialog('What are you doing here?')
 			await get_tree().create_timer(2).timeout
-			await %Dialogue.dialog('Any prices..?', 50, ['NO', 'are they necessary?'])
+			var anss = await %Dialogue.dialog('Any prices..?', 50, ['NO', 'are they necessary?'])
+			chooseLen = len(anss)
+			print(anss[await choosed])
 			await %Dialogue.dialog('...')
 			await get_tree().create_timer(2).timeout
 			await %Dialogue.dialog('Okay.. you sounds like devil..')

@@ -40,7 +40,6 @@ func setup_zone_signals(area: Area3D, zone_name: String):
 
 func setup_letter_signals():
 	"""Подключаем сигналы букв для отслеживания вращения"""
-	print($"../Letters".get_children())
 	for letter in $"../Letters".get_children():
 		if letter is RigidBody3D:
 			if not letter.is_connected("integrated_forces", _on_letter_moved.bind(letter)):
@@ -152,15 +151,14 @@ func on_word_completed():
 		if letter is RigidBody3D:
 			letter.apply_central_impulse(Vector3.UP * 5)
 			
-	get_tree().create_timer(5)
+	await get_tree().create_timer(3).timeout
 	
-	for letter in $"../Letters".get_children():
-		if letter is RigidBody3D:
-			letter.queue_free()
-			$"../..".AddWords({"":""})
+	$"../..".clear()
 	
 	print("🎊 ПОБЕДА! Ты крут!")
 	$"..".move = false
+	$"../..".type = false
+	$"../View".queue_free()
 	Status.makeIndex += 1
 
 func get_letter_in_zone(zone_name: String) -> Variant:
