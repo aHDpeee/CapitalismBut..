@@ -157,14 +157,51 @@ func f():
 		# LEVEL SIX!!!!!!!!!!!!
 		11:
 			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
+			# приходит чел
+			await %Dialogue.dialog("Uhh.. Hello?")
+			await timer(1.5)
+			var anss = await %Dialogue.dialog("I heard you're giving stuff away for free around here... Is that true?..", 50, ["Yes. That's true.", "Why are you all so surprised?"])
+			chooseLen = len(anss)
+			if anss[await choosed] == "Why are you all so surprised?":
+				await %Dialogue.dialog("It's just... There's gotta be a catch...")
+				await timer(2)
+			await %Dialogue.dialog("Why??? What profit do you get from this?", 50, ["..."])
+			await %Dialogue.dialog("My mom says there's no such thing as a free lunch.")
+			await timer(2)
+			# чел уходит
+			look_at_table()
+			%Words.AddWords({"PROFIT":"OUTFIT"})
+		# LEVEL SIX-SEVEN!!!!!!!!!!!!!!
+		12:
+			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
+			# приходит чувачок
+			await %Dialogue.dialog("Greetings, trader. Have mercy on me, and the Devs will have mercy on you.")
+			await timer(3)
+			await %Dialogue.dialog("Would you happen to have a coin for a poor man?", 50, ["No. I don't have any."])
+			look_at_table()
+			%Words.AddWords({"COIN":"JOIN"})
+		13:
+			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
+			await %Dialogue.dialog("How dare you lie to me! You're a trader in a shop - you definitely have coins!")
+			await %Dialogue.dialog("Give it to me now, or the Devs will punish you!", 50, ["But why you ask me for coins? Don't you have your own?"])
+			await %Dialogue.dialog("You're bringing trouble upon yourself, boy! If you don't give me the money — then the Devs will forget about you after the jam and never come back to finish you!", 40, ['...'])
+			await timer(2)
+			await %Dialogue.dialog("You'll regret not giving me that money.")
+			await timer(2)
+			# чел уходит
+			look_at_table()
+			%Words.AddWords({"MONEY":"HONEY"})
+		# LEVEL 8!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		14:
+			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
+			await %Dialogue.dialog("")
 			
 			
-			
-			
+#	x - готово; p - в процессe; n! - не начинали, а надо бы;
+#   было - GIVE/LIVE - x, PRICES/MICES - x, BUY/GUY - x, FREE/TREE - x, THINK/BLINK - x, DEAL/MEAL - x, JUST/MUST - n!, TAKE/CAKE - x, RUN/FUN - x, BUSY/MUSY - x, CLIENT/GLIENT - x,
+#   PROFIT/OUTFIT - n!, COIN/JOIN - n!, MONEY/HONEY - n!
 
-#   было - GIVE/LIVE - x, PRICES/MICES - x, BUY/GUY - x, FREE/TREE - x, THINK/BLINK - x, DEAL/MEAL - x, JUST/MUST - p, TAKE/CAKE - x, RUN/FUN - x, BUSY/MUSY - x, CLIENT/GLIENT - x
-
-#  будет - COIN/JOIN, 
+#  будет - WEALTH/HEALTH, CASH/DASH
 		
 
 func whichChoosed(n : int):
@@ -200,6 +237,9 @@ func _input(event: InputEvent) -> void:
 
 
 func timer(time: float) -> void:
+	"""
+	Просто упрощённый вид обычного .timeout из годота, nothing special
+	"""
 	await get_tree().create_timer(time).timeout
 	
 func look_at_table() -> void:
