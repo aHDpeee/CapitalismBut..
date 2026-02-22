@@ -37,10 +37,12 @@ func _input(event: InputEvent) -> void:
 			var achi : RigidBody3D = chi[activeLetterIndex]
 			if event.is_pressed() and not event.is_echo():
 				if Controller.inStack("asd") and Controller.arePressed("asd"): 
+					#%Keyboard.autoHide = %Keyboard.autoHide.replace("asd")
 					achi.changeType("default")
 					activeLetterIndex = (activeLetterIndex-1+$Letters.get_child_count()) % $Letters.get_child_count()
 					chi[activeLetterIndex].changeType("focus")
-				elif Controller.inStack("l;'") and Controller.arePressed("l;'"):
+				elif Controller.inStack("l;'") and Controller.arePressed("l;'"): 
+					#%Keyboard.autoHide = %Keyboard.autoHide.replace("l;'")
 					achi.changeType("default")
 					activeLetterIndex = (activeLetterIndex+1) % $Letters.get_child_count()
 					chi[activeLetterIndex].changeType("focus")

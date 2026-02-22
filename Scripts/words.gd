@@ -62,6 +62,16 @@ func _input(event: InputEvent) -> void:
 		if type == true and checkWords($JustTyped):
 			$makeView.move = true
 			type = false
+			
+			if Status.makeIndex == 0:
+				#%Keyboard.autoHide += "l;'asd"
+				%Keyboard.showLetters("l;'asd")
+				
+				await get_tree().create_timer(5).timeout
+				%Keyboard.showLetters("wcp,")
+				
+				await get_tree().create_timer(5).timeout
+				%Keyboard.showLetters("eo")
 			#s = ''
 			#print(sMesh)
 			#for x in range(activeLetterIndex):

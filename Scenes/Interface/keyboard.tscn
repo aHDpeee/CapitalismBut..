@@ -1,0 +1,232 @@
+[gd_scene format=3 uid="uid://ykk3of680eli"]
+
+[ext_resource type="PackedScene" uid="uid://bnrkenxmet3sx" path="res://Scenes/Interface/key.tscn" id="1_aw7kq"]
+[ext_resource type="Script" uid="uid://27hfebbct1fh" path="res://Scripts/Interface/keyboard.gd" id="1_dbfwa"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_dbfwa"]
+viewport_path = NodePath("TextureRect/SubViewport")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_swmhk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0yh1r"]
+
+[node name="Keyboard" type="Control" unique_id=311504281]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_dbfwa")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1113634280]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -522.0
+offset_top = -276.0
+offset_right = 309.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2615001, 1.2615001)
+texture = SubResource("ViewportTexture_dbfwa")
+expand_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="TextureRect" unique_id=1181098719]
+transparent_bg = true
+size = Vector2i(1065, 672)
+
+[node name="KeyboardRows" type="VBoxContainer" parent="TextureRect/SubViewport" unique_id=683653620]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="CenterContainer4" type="CenterContainer" parent="TextureRect/SubViewport/KeyboardRows" unique_id=70478561]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer4" unique_id=1443300750]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="key" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer4/HBoxContainer" unique_id=1634210135 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key2" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer4/HBoxContainer" unique_id=440581893 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key3" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer4/HBoxContainer" unique_id=439658221 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key4" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer4/HBoxContainer" unique_id=2146222131 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key5" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer4/HBoxContainer" unique_id=1826980598 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key6" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer4/HBoxContainer" unique_id=2093487867 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key7" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer4/HBoxContainer" unique_id=1366896233 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key8" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer4/HBoxContainer" unique_id=91367021 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key9" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer4/HBoxContainer" unique_id=1112766651 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key10" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer4/HBoxContainer" unique_id=1256605566 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key11" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer4/HBoxContainer" unique_id=1045126159 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key12" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer4/HBoxContainer" unique_id=314879596 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer4/HBoxContainer" unique_id=1460396692]
+custom_minimum_size = Vector2(49, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_swmhk")
+
+[node name="CenterContainer3" type="CenterContainer" parent="TextureRect/SubViewport/KeyboardRows" unique_id=677127608]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer3" unique_id=886080597]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Panel" type="Panel" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer3/HBoxContainer" unique_id=1405299488]
+custom_minimum_size = Vector2(31, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_swmhk")
+
+[node name="key" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer3/HBoxContainer" unique_id=1092274704 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key2" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer3/HBoxContainer" unique_id=451485502 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key3" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer3/HBoxContainer" unique_id=1036323469 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key4" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer3/HBoxContainer" unique_id=1862188686 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key5" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer3/HBoxContainer" unique_id=260086151 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key6" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer3/HBoxContainer" unique_id=712488113 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key7" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer3/HBoxContainer" unique_id=647162618 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key8" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer3/HBoxContainer" unique_id=1644313055 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key9" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer3/HBoxContainer" unique_id=1561487550 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key10" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer3/HBoxContainer" unique_id=696983742 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key11" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer3/HBoxContainer" unique_id=1339892064 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key12" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer3/HBoxContainer" unique_id=1406422684 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="TextureRect/SubViewport/KeyboardRows" unique_id=955886708]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer2" unique_id=1773237465]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="key" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer2/HBoxContainer" unique_id=1713619124 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key2" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer2/HBoxContainer" unique_id=1407817076 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key3" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer2/HBoxContainer" unique_id=25754863 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key4" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer2/HBoxContainer" unique_id=393867803 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key5" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer2/HBoxContainer" unique_id=1644203660 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key6" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer2/HBoxContainer" unique_id=897385053 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key7" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer2/HBoxContainer" unique_id=569781643 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key8" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer2/HBoxContainer" unique_id=1551333774 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key9" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer2/HBoxContainer" unique_id=185966805 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key10" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer2/HBoxContainer" unique_id=123470109 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key11" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer2/HBoxContainer" unique_id=573193613 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="TextureRect/SubViewport/KeyboardRows" unique_id=28321255]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer" unique_id=1967044814]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Panel" type="Panel" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer/HBoxContainer" unique_id=469361798]
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0yh1r")
+
+[node name="key" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer/HBoxContainer" unique_id=1757645580 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key2" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer/HBoxContainer" unique_id=1628202884 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key3" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer/HBoxContainer" unique_id=2047500471 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key4" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer/HBoxContainer" unique_id=1393526813 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key5" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer/HBoxContainer" unique_id=1916905885 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key6" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer/HBoxContainer" unique_id=43880358 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key7" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer/HBoxContainer" unique_id=1216539672 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key8" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer/HBoxContainer" unique_id=298481453 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key9" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer/HBoxContainer" unique_id=1009789679 instance=ExtResource("1_aw7kq")]
+layout_mode = 2
+
+[node name="key10" parent="TextureRect/SubViewport/KeyboardRows/CenterContainer/HBoxContainer" unique_id=1609301392 instance=ExtResource("1_aw7kq")]
+layout_mode = 2

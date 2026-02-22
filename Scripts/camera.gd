@@ -32,7 +32,10 @@ func lookAtWindow(camera : Camera3D, t : Tween):
 	t = myTween()
 	t.tween_property(camera, "position", Vector3(0,2.502*0.7,1.2), 1.5)
 	t.tween_property(camera, "rotation", Vector3(0,0,0), 1.5)
+				
 	t.play()
+	await t.finished
+	%Keyboard.showLetters("]q")
 	
 func lookAtTable(camera : Camera3D, t : Tween):
 	status = "table";
@@ -43,6 +46,7 @@ func lookAtTable(camera : Camera3D, t : Tween):
 	t.play()
 	
 	
+	
 
 
 func _input(event: InputEvent) -> void:
@@ -51,16 +55,19 @@ func _input(event: InputEvent) -> void:
 			if Controller.arePressed("/z") and not Controller.arePressed(']q') and status== "table":
 				for ct in range(len(cameras)):
 					lookAtWindow(cameras[ct], tweens[ct])
+
 				#await tweens[0].finished
 					
 			if Controller.arePressed("/z]q")   and status== "window":
 				status = 'fixed_window'
 				emit_signal('fixed')
+				%Keyboard.hideLetters("z/]q")
 				
 		if event.is_released():
 			if not Controller.arePressed("/z") and status == "window":
 				for ct in range(len(cameras)):
 					lookAtTable(cameras[ct], tweens[ct])
+				%Keyboard.hideLetters("q]")
 		
 			
 		

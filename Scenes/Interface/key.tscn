@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bnrkenxmet3sx"]
+
+[ext_resource type="FontFile" uid="uid://dp5tesm7w4dbp" path="res://Font/Doto-VariableFont_ROND,wght.ttf" id="1_kngu6"]
+[ext_resource type="Shader" uid="uid://c61i1fkcn0eb0" path="res://Shaders/invert.gdshader" id="2_hwtuw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hwtuw"]
+content_margin_left = 28.0
+content_margin_top = 10.0
+content_margin_right = 22.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mq0ig"]
+shader = ExtResource("2_hwtuw")
+
+[node name="key" type="Label" unique_id=1634210135]
+clip_children = 2
+clip_contents = true
+offset_right = 76.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_kngu6")
+theme_override_font_sizes/font_size = 44
+theme_override_styles/normal = SubResource("StyleBoxFlat_hwtuw")
+text = "1"
+vertical_alignment = 1
+
+[node name="Invert" type="ColorRect" parent="." unique_id=228061098]
+visible = false
+material = SubResource("ShaderMaterial_mq0ig")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -5,18 +5,27 @@ signal choosed(index : int)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$"../SubViewportContainer/cameras".fixed.connect(f)
+	await get_tree().create_timer(0.8)
+	%Keyboard.showLetters("z/")
 
 func f():
 	await get_tree().create_timer(0.1)
 	match Status.makeIndex:
 		0:
 			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
-			%Dialogue.dialog('Store? Here?')
+			%Keyboard.hideLetters("]q/z")
+			%Keyboard.autoHide = ""
+			await %Dialogue.dialog('Store? Here?')
 			await get_tree().create_timer(2).timeout
+			%Keyboard.autoHide = "hj"
+			%Keyboard.showLetters("hj")
 			var anss = await %Dialogue.dialog('I\'ve never seen it before',  50.0, ['fdfdsadf', 'asdasdsad'])
 			chooseLen = len(anss)
 			print(anss[await choosed])
-			%Dialogue.dialog('Just... Give me something?')
+			%Keyboard.autoHide = ""
+			%Keyboard.hideLetters("hj")
+			await %Dialogue.dialog('Just... Give me something?')
+			await get_tree().create_timer(4).timeout
 			for i in range(len(%cameras.cameras)):
 				%cameras.lookAtTable(%cameras.cameras[i], %cameras.tweens[i])
 			%Words.AddWords({"GIVE":"LIVE"})

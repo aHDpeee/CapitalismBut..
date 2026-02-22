@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b5t340i1ok5bv" path="res://Scenes/words.tscn" id="3_8dgsw"]
 [ext_resource type="Script" uid="uid://bxv05jhlje5f2" path="res://Scripts/camera.gd" id="4_wmepm"]
 [ext_resource type="Script" uid="uid://bx3gpfi08orj0" path="res://Scripts/dialog_node.gd" id="5_vi07p"]
+[ext_resource type="PackedScene" uid="uid://ykk3of680eli" path="res://Scenes/Interface/keyboard.tscn" id="6_8dgsw"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cub8s"]
 
@@ -16,6 +17,11 @@ background_mode = 1
 background_color = Color(0.083392, 0.083392, 0.08339202, 1)
 
 [node name="Desktop3D" type="Node3D" unique_id=2131246589]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1566010550]
+
+[node name="Keyboard" parent="CanvasLayer" unique_id=311504281 instance=ExtResource("6_8dgsw")]
+unique_name_in_owner = true
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=177814653]
 transform = Transform3D(1, 0, 0, 0, -0.14157511, 0.98992753, 0, -0.98992753, -0.14157511, 0, 3.1866171, 0.46919906)
