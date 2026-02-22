@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://gql3hjssgwej"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_20200"]
+size = Vector3(0.02131614, 0.05543518, 0.017282486)
+
+[sub_resource type="Gradient" id="Gradient_lisyl"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fhyxq"]
+gradient = SubResource("Gradient_lisyl")
+
+[node name="E" type="Area3D" unique_id=1601768901]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1882716138]
+shape = SubResource("BoxShape3D_20200")
+
+[node name="shadow" type="Sprite3D" parent="." unique_id=1094731247]
+transform = Transform3D(0.105, 0, 0, 0, -4.5896957e-09, -0.105, 0, 0.105, -4.5896957e-09, 0, 0, 0)
+layers = 33792
+texture = SubResource("GradientTexture2D_fhyxq")

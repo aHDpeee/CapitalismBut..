@@ -47,9 +47,9 @@ func _input(event: InputEvent) -> void:
 			if 1:
 				var force =  Vector3.ZERO
 				if Controller.arePressed("e"):
-					achi.angular_velocity = Vector3(0,-120,0)
+					achi.angular_velocity = Vector3(0,-100,0)
 				if Controller.arePressed("o"):
-					achi.angular_velocity = Vector3(0,120,0)
+					achi.angular_velocity = Vector3(0,100,0)
 					
 				if Controller.arePressed("p"):
 					force += Vector3(1,0,-1)

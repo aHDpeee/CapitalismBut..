@@ -4,7 +4,7 @@ var target_zones = {}
 var placed_letters = {}
 
 @export var position_fucked_uping: float = 0.2
-@export var rotation_fucked_uping: float = 100.0  # 1.5 оптималочка мю
+@export var rotation_fucked_uping: float = 100.0 
 
 func _ready():
 	setup_zones()
@@ -118,7 +118,7 @@ func handle_attention_letter(letter: RigidBody3D, zone_name: String):
 	zone_info.occupied_by = letter
 	zone_info.is_correct = false
 	
-	set_letter_state(letter, "attention")
+	#set_letter_state(letter, "attention")
 	print("Буква ", letter.letter, " уже в зоне ", zone_name, ", но нужен поворот")
 
 func handle_wrong_letter_in_zone(letter: RigidBody3D, zone_name: String):
@@ -129,8 +129,7 @@ func handle_wrong_letter_in_zone(letter: RigidBody3D, zone_name: String):
 	print("❌ Неправильная буква ", letter.letter, " в зоне ", zone_name)
 
 func set_letter_state(letter: RigidBody3D, state: String):
-	if letter.has_method("changeType"):
-		letter.changeType(state)
+	letter.changeType(state)
 
 func has_letter_property(body: Node):
 	return "letter" in body
@@ -144,29 +143,21 @@ func check_complete_word():
 		if not zone_info.is_correct:
 			return
 
-	print("теперь можно спать спокойно.... наверное..")
 	on_word_completed()
 
 func on_word_completed():
-	"""Тут можно намудрить финалочку"""
-	# Например:
-	# 1. Анимация букв
+	await get_tree().create_timer(0.3)
 	for letter in $"../Letters".get_children():
 		if letter is RigidBody3D:
-			# Заставляем буквы прыгать от радости
 			letter.apply_central_impulse(Vector3.UP * 5)
 	
-	# 2. Звук победы (если есть AudioStreamPlayer)
-	# $WinSound.play()
-	
-	# 3. Эффект частиц
-	# $Confetti.emitting = true
-	
-	# 4. Загрузка следующего уровня через 2 секунды
-	# await get_tree().create_timer(2.0).timeout
-	# get_tree().change_scene_to_file("res://next_level.tscn")
+	for letter in $"../Letters".get_children():
+		if letter is RigidBody3D:
+			letter.queue_free()
+			$"../..".AddWords({"":""})
 	
 	print("🎊 ПОБЕДА! Ты крут!")
+	$"..".move = false
 
 func get_letter_in_zone(zone_name: String) -> Variant:
 	if zone_name in target_zones:

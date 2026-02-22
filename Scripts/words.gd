@@ -14,6 +14,8 @@ var rightWord : Dictionary
 func _ready() -> void:
 	$ToType.mesh.text = ""
 	$ToType/ToType.mesh.text = ""
+	$makeView.queue_free()
+	var mV = preload("res://Scenes/makeGIVE.tscn")
 	#AddWords(['perpetuum', 'rotation', 'rejection', 'fighter', 'magnetometr', 'sight'], 1, $ToType)
 	#AddWords(dic)
 	pass

@@ -7,17 +7,19 @@ func _ready() -> void:
 	$"../SubViewportContainer/cameras".fixed.connect(f)
 
 func f():
-	await get_tree().create_timer(0.1)
-	%Dialogue.dialog('Store? Here?')
-	await get_tree().create_timer(2).timeout
-	var anss = await %Dialogue.dialog('I\'ve never seen it before',  50.0, ['fdfdsadf', 'asdasdsad'])
-	chooseLen = len(anss)
-	print(anss[await choosed])
-	%Dialogue.dialog('Just... Give me something?')
-	for i in range(len(%cameras.cameras)):
-		%cameras.lookAtTable(%cameras.cameras[i], %cameras.tweens[i])
-	%Words.AddWords({"GIVE":"LIVE"})
-	%Words.type = true
+	match Status.makeIndex:
+		0:
+			await get_tree().create_timer(0.1)
+			%Dialogue.dialog('Store? Here?')
+			await get_tree().create_timer(2).timeout
+			var anss = await %Dialogue.dialog('I\'ve never seen it before',  50.0, ['fdfdsadf', 'asdasdsad'])
+			chooseLen = len(anss)
+			print(anss[await choosed])
+			%Dialogue.dialog('Just... Give me something?')
+			for i in range(len(%cameras.cameras)):
+				%cameras.lookAtTable(%cameras.cameras[i], %cameras.tweens[i])
+			%Words.AddWords({"GIVE":"LIVE"})
+			%Words.type = true
 	
 
 func whichChoosed(n : int):
