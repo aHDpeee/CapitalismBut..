@@ -9,6 +9,9 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fhyxq"]
 gradient = SubResource("Gradient_lisyl")
 
+[sub_resource type="TextMesh" id="TextMesh_lisyl"]
+text = "Q"
+
 [node name="E" type="Area3D" unique_id=1601768901]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1882716138]
@@ -18,3 +21,8 @@ shape = SubResource("BoxShape3D_20200")
 transform = Transform3D(0.06359305, 0, 0, 0, -4.5896957e-09, -0.105, 0, 0.105, -4.5896957e-09, 0, 0, 0)
 layers = 33792
 texture = SubResource("GradientTexture2D_fhyxq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1956646857]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+visible = false
+mesh = SubResource("TextMesh_lisyl")
