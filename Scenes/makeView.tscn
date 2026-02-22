@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c3dhm37jbhdx3"]
+
+[ext_resource type="Script" uid="uid://bp5lk013obpue" path="res://Scripts/make_view.gd" id="1_flad7"]
+[ext_resource type="PackedScene" uid="uid://canodryngwne8" path="res://Scenes/typing_area.tscn" id="2_krt0v"]
+[ext_resource type="PackedScene" uid="uid://cwsbgtyi84sby" path="res://Scenes/LevelTypes/GIVE.tscn" id="3_7b8e4"]
+
+[node name="makeView" type="Node3D" unique_id=1882131718]
+script = ExtResource("1_flad7")
+
+[node name="TypingArea" parent="." unique_id=1747342196 instance=ExtResource("2_krt0v")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1785864042]
+transform = Transform3D(1, 0, 0, 0, 0.03212598, 0.99948376, 0, -0.99948376, 0.03212598, 2.3841858e-07, 0.5465896, -0.056916952)
+
+[node name="Letters" type="Node3D" parent="." unique_id=202657891]
+
+[node name="View" parent="." unique_id=518451539 instance=ExtResource("3_7b8e4")]

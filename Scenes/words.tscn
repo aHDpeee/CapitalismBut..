@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b5t340i1ok5bv"]
 
 [ext_resource type="Script" uid="uid://bnw7k6aamnibc" path="res://Scripts/words.gd" id="1_1b8nx"]
-[ext_resource type="PackedScene" uid="uid://c3dhm37jbhdx3" path="res://Scenes/makeGIVE.tscn" id="2_ccgj1"]
+[ext_resource type="PackedScene" uid="uid://c3dhm37jbhdx3" path="res://Scenes/makeView.tscn" id="2_ccgj1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ccgj1"]
 shading_mode = 0

@@ -14,14 +14,17 @@ var rightWord : Dictionary
 func _ready() -> void:
 	$ToType.mesh.text = ""
 	$ToType/ToType.mesh.text = ""
-	$makeView.queue_free()
-	var mV = preload("res://Scenes/makeGIVE.tscn")
+	$makeView/View.queue_free()
 	#AddWords(['perpetuum', 'rotation', 'rejection', 'fighter', 'magnetometr', 'sight'], 1, $ToType)
 	#AddWords(dic)
 	pass
 
 func AddWords(ans : Dictionary, perk: int = 1):
 	var index = randi() % len(ans)
+	sMesh = []
+	s = ''
+	type = true
+	activeLetterIndex = 0
 	$ToType.mesh.text = ans.values()[index]
 	$ToType/ToType.mesh.text = ans.keys()[index]
 	rightWord = {$ToType/ToType.mesh.text:$ToType.mesh.text}
@@ -42,6 +45,7 @@ func _input(event: InputEvent) -> void:
 			$makeView/TypingArea.position+Vector3(0,1,0), $makeView/TypingArea.rotation).letter)
 			s += String.chr(event.keycode).to_lower()
 		if event.as_text() == 'Backspace' and activeLetterIndex >= 0 and type:
+			activeLetterIndex = min(activeLetterIndex, $makeView/Letters.get_child_count()-1)
 			$makeView/Letters.remove_child(sMesh[activeLetterIndex])
 			$makeView/Letters.remove_child($makeView/Letters.get_child(activeLetterIndex))
 			activeLetterIndex -= 1

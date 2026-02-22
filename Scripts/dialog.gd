@@ -31,6 +31,8 @@ func dialog(text: String, speed := 50.0, choose := []):
 			butt.pres.connect(choosen)
 		
 		return choose
+	else:
+		return []
 
 func choosen(s1: String):
 	print(s1)

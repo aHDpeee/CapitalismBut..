@@ -7,9 +7,10 @@ func _ready() -> void:
 	$"../SubViewportContainer/cameras".fixed.connect(f)
 
 func f():
+	await get_tree().create_timer(0.1)
 	match Status.makeIndex:
 		0:
-			await get_tree().create_timer(0.1)
+			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
 			%Dialogue.dialog('Store? Here?')
 			await get_tree().create_timer(2).timeout
 			var anss = await %Dialogue.dialog('I\'ve never seen it before',  50.0, ['fdfdsadf', 'asdasdsad'])
@@ -19,7 +20,21 @@ func f():
 			for i in range(len(%cameras.cameras)):
 				%cameras.lookAtTable(%cameras.cameras[i], %cameras.tweens[i])
 			%Words.AddWords({"GIVE":"LIVE"})
-			%Words.type = true
+		1:
+			if %Words/makeView.get_node("View"):
+				%Words/makeView/View.queue_free()
+			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
+			await %Dialogue.dialog('Hey. What\'s wrong here?')
+			await get_tree().create_timer(2).timeout
+			await %Dialogue.dialog('What are you doing here?')
+			await get_tree().create_timer(2).timeout
+			await %Dialogue.dialog('Any prices..?', 50, ['NO', 'are they necessary?'])
+			await %Dialogue.dialog('...')
+			await get_tree().create_timer(2).timeout
+			await %Dialogue.dialog('Okay.. you sounds like devil..')
+			for i in range(len(%cameras.cameras)):
+				%cameras.lookAtTable(%cameras.cameras[i], %cameras.tweens[i])
+			%Words.AddWords({"PRICES":"MICES"})
 	
 
 func whichChoosed(n : int):
