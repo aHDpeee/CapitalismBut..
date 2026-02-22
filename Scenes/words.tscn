@@ -35,7 +35,7 @@ before any text"
 script = ExtResource("1_1b8nx")
 
 [node name="ToType" type="MeshInstance3D" parent="." unique_id=251481102]
-transform = Transform3D(1.792131, 1.0572528, -1.0595793, 0.257018, 1.4110041, 1.8426162, 1.4745961, -1.5308523, 0.96658283, 0.08010006, 0.49139237, 0.6802815)
+transform = Transform3D(1.945214, 1.0845164, -0.7015639, -0.24644294, 1.5565829, 1.7229457, 1.2679256, -1.3612851, 1.4112029, -0.14380157, 0.49139237, 0.110268354)
 layers = 1024
 mesh = SubResource("TextMesh_1b8nx")
 
@@ -50,4 +50,4 @@ layers = 0
 mesh = SubResource("TextMesh_ynwrw")
 
 [node name="makeView" parent="." unique_id=1882131718 instance=ExtResource("2_ccgj1")]
-transform = Transform3D(3.6918275, 0, 0.96158004, 0, 3.815, 0, -0.96158004, 0, 3.6918275, -2.565141, 0, 0.5389209)
+transform = Transform3D(3.6918275, 0, 0.96158004, 0, 3.815, 0, -0.96158004, 0, 3.6918275, -2.9043603, 0, 0.5389209)
