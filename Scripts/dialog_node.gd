@@ -113,16 +113,58 @@ func f():
 			look_at_table()
 			%Words.AddWords({"JUST":"MUST"})
 		# LEVEL 4!!!!!!!!
-		
-		
-# Привет, дорогуша! Вижу, у тебя тут магазин процветает, люди подходят.
-# Расскажи мне, если не секрет, а сколько ты зарабатываешь?
+		7:
+			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
+			# приходит желательно баба
+			await %Dialogue.dialog("Hi, sweetie! I see your little shop is doing great - people are coming by...")
+			await timer(2)
+			await %Dialogue.dialog("So, what's your take? If it's not a secret.", 50, ['What the duck is.. "take?"'])
+			await timer(1)
+			look_at_table()
+			%Words.AddWords({"TAKE":"CAKE"})
+		8:
+			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
+			await %Dialogue.dialog("What you mean, honey? Of course, i'm talking about income!")
+			await timer(2)
+			await %Dialogue.dialog("What's wrong with your face?.. Something wrong?..", 50, ["I don't know, what income is..."])
+			await timer(2)
+			await %Dialogue.dialog("AHHHHHH, COMMUNIST!!! RUN AWAY!!!!", 70)
+			# не уходит чел, а прям убегает"
+			await timer(1.5)
+			look_at_table()
+			%Words.AddWords({"RUN":"FUN"})
+		# LEVEL 5!!!!!!!!!!
+		9:
+			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
+			# подходит мутный типок
+			await %Dialogue.dialog("Hey! Yeah, you! Need to talk. Business.")
+			await timer(2)
+			look_at_table()
+			%Words.AddWords({"BUSY":"MUSY"})
+		10:
+			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
+			await %Dialogue.dialog("I need a place to sell some... sugar. Well, the sweety one, you know.")
+			await timer(2)
+			await %Dialogue.dialog("Can you help me out? I'll pay for that.", 50, ["Sell?.. Can we give it away for free?"])
+			# экаран трясётся
+			await %Dialogue.dialog("CAN WHAT?! ARE YOU SERIOUS?!", 70, ["I just think no one will *buy* sugar..."])
+			await %Dialogue.dialog("W..Why?..", 50, ["Well... It's just that I'd only *buy* sugar if I could make snowmen out of it..."])
+			await timer(4)
+			# чел уходит
+			await timer(1)
+			look_at_table()
+			%Words.AddWords({"CLIENT":"GLIENT"})
+		# LEVEL SIX!!!!!!!!!!!!
+		11:
+			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
+			
+			
+			
+			
 
-# What the duck is "
-	
-#   было - GIVE/LIVE, PRICES/MICES, BUY/GUY, FREE/TREE, THINK/BLINK, DEAL/MEAL, JUST/MUST
+#   было - GIVE/LIVE, PRICES/MICES, BUY/GUY, FREE/TREE, THINK/BLINK, DEAL/MEAL, JUST/MUST, TAKE/CAKE, RUN/FUN, BUSY/MUSY, CLIENT/GLIENT
 
-#  будет -
+#  будет - COIN/JOIN, 
 		
 
 func whichChoosed(n : int):
