@@ -4,7 +4,7 @@ var target_zones = {}
 var placed_letters = {}
 
 @export var position_fucked_uping: float = 0.2
-@export var rotation_fucked_uping: float = 100.0 
+@export var rotation_fucked_uping: float = 10.0 
 
 func _ready():
 	setup_zones()
