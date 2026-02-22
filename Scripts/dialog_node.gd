@@ -115,7 +115,14 @@ func f():
 		# LEVEL 4!!!!!!!!
 		
 		
-# 	
+# Привет, дорогуша! Вижу, у тебя тут магазин процветает, люди подходят.
+# Расскажи мне, если не секрет, а сколько ты зарабатываешь?
+
+# What the duck is "
+	
+#   было - GIVE/LIVE, PRICES/MICES, BUY/GUY, FREE/TREE, THINK/BLINK, DEAL/MEAL, JUST/MUST
+
+#  будет -
 		
 
 func whichChoosed(n : int):
