@@ -41,8 +41,6 @@ func lookAtTable(camera : Camera3D, t : Tween):
 	t.tween_property(camera, "position", defPos, 1.5)
 	t.tween_property(camera, "rotation", defRot, 1.5)
 	t.play()
-				#if Controller.inStack("]q"):
-					#pass
 	
 	
 
@@ -53,6 +51,7 @@ func _input(event: InputEvent) -> void:
 			if Controller.arePressed("/z") and not Controller.arePressed(']q') and status== "table":
 				for ct in range(len(cameras)):
 					lookAtWindow(cameras[ct], tweens[ct])
+				#await tweens[0].finished
 					
 			if Controller.arePressed("/z]q")   and status== "window":
 				status = 'fixed_window'

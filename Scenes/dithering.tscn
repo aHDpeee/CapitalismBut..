@@ -48,6 +48,7 @@ visible = false
 mesh = SubResource("BoxMesh_ogdd7")
 
 [node name="DistheringShader" type="ColorRect" parent="." unique_id=1047249506]
+visible = false
 show_behind_parent = true
 light_mask = 0
 material = SubResource("ShaderMaterial_74upo")

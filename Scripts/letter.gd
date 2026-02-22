@@ -11,13 +11,16 @@ func _ready() -> void:
 func changeType(type, color=Color.DARK_RED):
 	match type:
 		"focus":
+			$Shape/Outline.mesh.material.albedo = Color(0.0, 0.0, 0.0, 1.0)
 			$Shape/Outline.scale *= defOutScale*1.2
 			$Shape.mesh.material.albedo = Color(0.617, 0.617, 0.617, 1.0)
 		"attention":
-			print(type)
+			$Shape/Outline.mesh.material.albedo = Color(1.0, 1.0, 1.0, 1.0)
+			$Shape.mesh.material.albedo = Color(0.0, 0.0, 0.0, 1.0)
 		"wrong":	
 			print(type)
 		"default":
+			$Shape/Outline.mesh.material.albedo = Color(0.0, 0.0, 0.0, 1.0)
 			$Shape/Outline.scale = defOutScale
 			$Shape.mesh.material.albedo = Color.WHITE
 			

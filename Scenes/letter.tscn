@@ -28,7 +28,7 @@ font_size = 10
 collision_layer = 257
 collision_mask = 257
 physics_material_override = SubResource("PhysicsMaterial_ka838")
-gravity_scale = 2.377
+gravity_scale = 1.007
 constant_force = Vector3(0, -9.9, 0)
 script = ExtResource("1_ka838")
 

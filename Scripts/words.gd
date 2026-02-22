@@ -22,7 +22,8 @@ func AddWords(ans : Dictionary, perk: int = 1):
 	var index = randi() % len(ans)
 	$ToType.mesh.text = ans.values()[index]
 	$ToType/ToType.mesh.text = ans.keys()[index]
-	rightWord = {$ToType.mesh.text:$ToType/ToType.mesh.text}
+	rightWord = {$ToType/ToType.mesh.text:$ToType.mesh.text}
+	print(rightWord, ans)
 	
 func checkWords(object: MeshInstance3D):
 	if object.mesh.text.to_upper() == rightWord.keys()[0]:

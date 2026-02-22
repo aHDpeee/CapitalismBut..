@@ -36,7 +36,7 @@ func setup_zone_signals(area: Area3D, zone_name: String):
 	area.body_entered.connect(_on_zone_body_entered.bind(zone_name))
 	area.body_exited.connect(_on_zone_body_exited.bind(zone_name))
 	
-	print("Сигнал для зоны ", zone_name, " подключен! ID зоны: ", area.get_instance_id)
+	#print("Сигнал для зоны ", zone_name, " подключен! ID зоны: ", area.get_instance_id)
 
 func setup_letter_signals():
 	"""Подключаем сигналы букв для отслеживания вращения"""
@@ -69,7 +69,6 @@ func _on_zone_body_exited(body: Node, zone_name: String):
 		zone_info.is_correct = false
 		placed_letters.erase(zone_name)
 		
-		set_letter_state(letter, "default")
 	check_complete_word()
 
 func _on_letter_moved(letter: RigidBody3D):
@@ -182,6 +181,3 @@ func reset_all_zones():
 	
 	placed_letters.clear()
 	
-	for letter in $"../Letters".get_children():
-		if letter is RigidBody3D:
-			set_letter_state(letter, "default")
