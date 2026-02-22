@@ -7,19 +7,19 @@
 script = ExtResource("1_1ttus")
 
 [node name="P" parent="." unique_id=1601768901 instance=ExtResource("2_74u2j")]
-transform = Transform3D(-0.011152285, 0, 0.9999378, 0, 1, 0, -0.9999378, 0, -0.011152285, -0.022886984, 0, 0.07172958)
+transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, -0.022886984, 0, 0.07172958)
 
 [node name="R" parent="." unique_id=487219525 instance=ExtResource("2_74u2j")]
-transform = Transform3D(0.1193745, 0, -0.99284923, 0, 1, 0, 0.99284923, 0, 0.1193745, -0.11300626, 0, -0.058010858)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.11300626, 0, -0.058010858)
 
 [node name="I" parent="." unique_id=1457480686 instance=ExtResource("2_74u2j")]
-transform = Transform3D(-0.011152285, 0, 0.9999378, 0, 1, 0, -0.9999378, 0, -0.011152285, -0.10589439, 0, 0.07411453)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.10589439, 0, 0.07411453)
 
 [node name="C" parent="." unique_id=506393897 instance=ExtResource("2_74u2j")]
-transform = Transform3D(0.9999378, 0, 0.0111524165, 0, 1, 0, -0.0111524165, 0, 0.9999378, -0.24111727, 0, 0.0042262524)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.24111727, 0, 0.0042262524)
 
 [node name="E" parent="." unique_id=218899670 instance=ExtResource("2_74u2j")]
-transform = Transform3D(0.011152373, 0, -0.9999378, 0, 1, 0, 0.9999378, 0, 0.011152373, -0.060223095, 0, 0.009599367)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.060223095, 0, 0.009599367)
 
 [node name="S" parent="." unique_id=1237850093 instance=ExtResource("2_74u2j")]
 transform = Transform3D(0.0046076034, 0, -0.9999894, 0, 1, 0, 0.9999894, 0, 0.0046076034, -0.171267, 0, 0.0060172677)
