@@ -21,7 +21,7 @@ func setup_zones():
 				"area": child,
 				"position": child.global_position,
 				"rotation": child.global_rotation,
-				"letter": zone_name,
+				"letter": zone_name[0],
 				"occupied_by": null,
 				"is_correct": false
 			}

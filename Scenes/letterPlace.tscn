@@ -15,6 +15,6 @@ gradient = SubResource("Gradient_lisyl")
 shape = SubResource("BoxShape3D_20200")
 
 [node name="shadow" type="Sprite3D" parent="." unique_id=1094731247]
-transform = Transform3D(0.105, 0, 0, 0, -4.5896957e-09, -0.105, 0, 0.105, -4.5896957e-09, 0, 0, 0)
+transform = Transform3D(0.06359305, 0, 0, 0, -4.5896957e-09, -0.105, 0, 0.105, -4.5896957e-09, 0, 0, 0)
 layers = 33792
 texture = SubResource("GradientTexture2D_fhyxq")

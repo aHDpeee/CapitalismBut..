@@ -46,6 +46,14 @@ func arePressed(str):
 func _ready() -> void:
 	for x in range(keysstacklen):
 		keysstack.append("")
+		
+	DisplayServer.window_set_mouse_passthrough([])
+	if OS.get_name() == "Web":
+		JavaScriptBridge.eval("""
+			var canvas = document.querySelector('canvas');
+			canvas.setAttribute('tabindex', '0');
+			canvas.focus();
+		""")
 
 func _process(delta: float) -> void:
 	pass
