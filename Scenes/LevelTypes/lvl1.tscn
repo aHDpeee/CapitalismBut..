@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bx3gpfi08orj0" path="res://Scripts/dialog_node.gd" id="5_vi07p"]
 [ext_resource type="Texture2D" uid="uid://bcgwy6mpixp73" path="res://Textures/PRICEhint.png" id="5_wmepm"]
 [ext_resource type="PackedScene" uid="uid://ykk3of680eli" path="res://Scenes/Interface/keyboard.tscn" id="6_8dgsw"]
+[ext_resource type="PackedScene" uid="uid://bai00qs4jyss" path="res://Scenes/human.tscn" id="8_2ajjh"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cub8s"]
 
@@ -32,6 +33,16 @@ distance_fade_shadow = 4096.0
 spot_range = 6.839
 spot_attenuation = 2.71
 spot_angle = 65.73
+spot_angle_attenuation = 5.2780128
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SpotLight3D" unique_id=1383173625]
+transform = Transform3D(0.9983172, 0.03166726, 0.048580237, 0.048670888, -0.002097413, -0.9988127, -0.03152777, 0.99949634, -0.0036351532, 0.0064454675, 0.88005656, -1.1941061)
+light_energy = 0.318
+distance_fade_begin = 0.0
+distance_fade_shadow = 4096.0
+spot_range = 3.1050172
+spot_attenuation = 2.71
+spot_angle = 43.296547
 spot_angle_attenuation = 5.2780128
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=741493921]
@@ -101,3 +112,7 @@ environment = SubResource("Environment_pycx8")
 
 [node name="dialogNODE" type="Node3D" parent="." unique_id=28542786]
 script = ExtResource("5_vi07p")
+
+[node name="Human" parent="." unique_id=411847624 instance=ExtResource("8_2ajjh")]
+transform = Transform3D(-0.49995354, 0, 0.006815298, 0, 0.5, 0, -0.006815298, 0, -0.49995354, -0.013654262, 0.62092537, -1.7339401)
+visible = false

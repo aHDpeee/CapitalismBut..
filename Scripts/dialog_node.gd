@@ -12,16 +12,18 @@ func _ready() -> void:
 
 func f():
 	await get_tree().create_timer(0.1)
+	$"../Human".visible = true
 	%Hint.visible = true
 	%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
 	%Hint.texture = load(Status.hints[Status.makeIndex])
 	match Status.makeIndex:
 		# LEVEL 1!!!!
 		0:
+			$"../Human".play_animation('enter')
+			await timer(2)
 			%Keyboard.autoHide = ""
 			await %Dialogue.dialog('Store? Here?')
 			%Keyboard.hideLetters("]q/z")
-
 			await timer(2)
 			var anss = await %Dialogue.dialog('I\'ve never seen it before',  50.0, ['fdfdsadf', 'asdasdsad'])
 			%Keyboard.autoHide = "hjg"
@@ -51,13 +53,14 @@ func f():
 			await %Dialogue.dialog('...')
 			await timer(2)
 			await %Dialogue.dialog('Okay.. you sounds like devil..')
+			$"../Human".play_animation('outer')
 			for i in range(len(%cameras.cameras)):
 				%cameras.lookAtTable(%cameras.cameras[i], %cameras.tweens[i])
 			%Words.AddWords({"PRICES":"MICES"})
 		# LEVEL 2!!!!!
 		2:
 			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
-			# ЧЕЛ ПРИХОДИТ
+			$"../Human".play_animation('enter')
 			var anss = await %Dialogue.dialog('Wow! How long has this place been here?', 50, ['I just opened up', 'Since the world began to exist'])
 			chooseLen = len(anss)
 			if anss[await choosed] == 'I just opened up':
@@ -77,13 +80,13 @@ func f():
 			await timer(2)
 			await %Dialogue.dialog('You\'re mad. I don\'t think you\'ll last long.')
 			await timer(2.5)
-			# ЧЕЛ УХОДИТ
+			$"../Human".play_animation('outer')
 			look_at_table()
 			%Words.AddWords({"FREE":"TREE"})
 		# LEVEL 3!!!!!!
 		4:
 			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
-			# ЧЕЛ ПРИХОДИТ
+			$"../Human".play_animation('enter')
 			await %Dialogue.dialog('Hello there. This spot has a lot of potential. Shame to waste it.')
 			await timer(3)
 			var anss = await %Dialogue.dialog('Ever thought about selling this place?', 50, ['Nope.', 'For what?'])
@@ -109,13 +112,13 @@ func f():
 			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
 			await %Dialogue.dialog('I\'ll give you some time to think. I\'ll be back in two days. Just think about it carefully!')
 			await timer(3.1)
-			# ЧЕЛ УХОДИТ
+			$"../Human".play_animation('outer')
 			look_at_table()
 			%Words.AddWords({"JUST":"DUST"})
 		# LEVEL 4!!!!!!!!
 		7:
 			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
-			# приходит желательно баба
+			$"../Human".play_animation('enter')    # приходит желательно баба
 			await %Dialogue.dialog("Hi, sweetie! I see your little shop is doing great - people are coming by...")
 			await timer(2)
 			await %Dialogue.dialog("So, what's your take? If it's not a secret.", 50, ['What the duck is.. "take?"'])
@@ -129,14 +132,14 @@ func f():
 			await %Dialogue.dialog("What's wrong with your face?.. Something wrong?..", 50, ["I don't know, what income is..."])
 			await timer(2)
 			await %Dialogue.dialog("AHHHHHH, COMMUNIST!!! RUN AWAY!!!!", 70)
-			# не уходит чел, а прям убегает"
+			$"../Human".play_animation('outer')     # не уходит чел, а прям убегает"
 			await timer(1.5)
 			look_at_table()
 			%Words.AddWords({"RUN":"FUN"})
 		# LEVEL 5!!!!!!!!!!
 		9:
 			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
-			# подходит мутный типок
+			$"../Human".play_animation('enter')   # подходит мутный типок
 			await %Dialogue.dialog("Hey! Yeah, you! Need to talk. Business.")
 			await timer(2)
 			look_at_table()
@@ -150,14 +153,14 @@ func f():
 			await %Dialogue.dialog("CAN WHAT?! ARE YOU SERIOUS?!", 70, ["I just think no one will *buy* sugar..."])
 			await %Dialogue.dialog("W..Why?..", 50, ["Well... It's just that I'd only *buy* sugar if I could make snowmen out of it..."])
 			await timer(4)
-			# чел уходит
+			$"../Human".play_animation('outer')
 			await timer(1)
 			look_at_table()
 			%Words.AddWords({"CLIENT":"GLIENT"})
 		# LEVEL SIX!!!!!!!!!!!!
 		11:
 			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
-			# приходит чел
+			$"../Human".play_animation('enter')
 			await %Dialogue.dialog("Uhh.. Hello?")
 			await timer(1.5)
 			var anss = await %Dialogue.dialog("I heard you're giving stuff away for free around here... Is that true?..", 50, ["Yes. That's true.", "Why are you all so surprised?"])
@@ -168,13 +171,13 @@ func f():
 			await %Dialogue.dialog("Why??? What profit do you get from this?", 50, ["..."])
 			await %Dialogue.dialog("My mom says there's no such thing as a free lunch.")
 			await timer(2)
-			# чел уходит
+			$"../Human".play_animation('outer')
 			look_at_table()
 			%Words.AddWords({"PROFIT":"OUTFIT"})
 		# LEVEL SIX-SEVEN!!!!!!!!!!!!!!
 		12:
 			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
-			# приходит чувачок
+			$"../Human".play_animation('enter')
 			await %Dialogue.dialog("Greetings, trader. Have mercy on me, and the Devs will have mercy on you.")
 			await timer(3)
 			await %Dialogue.dialog("Would you happen to have a coin for a poor man?", 50, ["No. I don't have any."])
@@ -188,7 +191,7 @@ func f():
 			await timer(2)
 			await %Dialogue.dialog("You'll regret not giving me that money.")
 			await timer(2)
-			# чел уходит
+			$"../Human".play_animation('outer')
 			look_at_table()
 			%Words.AddWords({"MONEY":"HONEY"})
 		# LEVEL 8!!!!!!!!!!!!!!!!!!!!!!!!!!!!
