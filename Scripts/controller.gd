@@ -60,6 +60,38 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
+		if event.pressed and not event.echo:
+			if event.ctrl_pressed and event.shift_pressed:
+				match event.keycode:
+					KEY_0:
+						set_level_index(0)
+					KEY_1:
+						set_level_index(1)
+					KEY_2:
+						set_level_index(2)
+					KEY_3:
+						set_level_index(3)
+					KEY_4:
+						set_level_index(4)
+					KEY_5:
+						set_level_index(5)
+					KEY_6:
+						set_level_index(6)
+					KEY_7:
+						set_level_index(7)
+					KEY_8:
+						set_level_index(8)
+					KEY_9:
+						set_level_index(9)
+					KEY_F1:
+						set_level_index(10)
+					KEY_F2:
+						set_level_index(11)
+					KEY_F3:
+						set_level_index(12)
+					KEY_F4:
+						set_level_index(13)
+
 		#var c = (String.chr(event.unicode) if event.unicode else event.as_text()).to_lower()
 		var c = String.chr(event.keycode).to_lower()
 		#print(event.get_keycode_with_modifiers())
@@ -77,3 +109,11 @@ func _input(event: InputEvent) -> void:
 		#if event.is_pressed() and not event.is_echo():
 			#if arePressed("asd"): print("left")
 			#if arePressed("l;'"): print("right")	
+
+
+func set_level_index(index: int) -> void:
+	"""
+	Меняет индекс уровня, предсавленных в dialog_node.gd
+	"""
+	Status.makeIndex = index
+	get_tree().reload_current_scene()
