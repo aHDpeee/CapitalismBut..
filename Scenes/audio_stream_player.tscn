@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dh4tyvkpxmk57"]
+
+[ext_resource type="AudioStream" uid="uid://ceqlfopvl3nyl" path="res://Sounds/1-Bit jam.mp3" id="1_jxntt"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=977366549]
+stream = ExtResource("1_jxntt")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true

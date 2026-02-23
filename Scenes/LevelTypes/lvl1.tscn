@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bx3gpfi08orj0" path="res://Scripts/dialog_node.gd" id="5_vi07p"]
 [ext_resource type="Texture2D" uid="uid://bcgwy6mpixp73" path="res://Textures/PRICEhint.png" id="5_wmepm"]
 [ext_resource type="PackedScene" uid="uid://ykk3of680eli" path="res://Scenes/Interface/keyboard.tscn" id="6_8dgsw"]
+[ext_resource type="PackedScene" uid="uid://c43a5coab0nk4" path="res://Scenes/transition.tscn" id="8_2ajjh"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cub8s"]
 
@@ -101,3 +102,8 @@ environment = SubResource("Environment_pycx8")
 
 [node name="dialogNODE" type="Node3D" parent="." unique_id=28542786]
 script = ExtResource("5_vi07p")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=2073515477]
+layer = 14
+
+[node name="Transition" parent="CanvasLayer2" unique_id=1371778010 instance=ExtResource("8_2ajjh")]

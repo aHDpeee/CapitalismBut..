@@ -30,6 +30,7 @@ anti_aliasing = false
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2bvuo"]
 playback_mode = 1
+random_pitch = 1.3182889
 streams_count = 6
 stream_0/stream = ExtResource("4_gl4vm")
 stream_1/stream = ExtResource("5_ofp2y")
@@ -83,3 +84,4 @@ theme_override_constants/separation = 0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1014349915]
 stream = SubResource("AudioStreamRandomizer_2bvuo")
+volume_db = -10.0

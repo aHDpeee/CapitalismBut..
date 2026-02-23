@@ -192,7 +192,8 @@ func f():
 			look_at_table()
 			%Words.AddWords({"MONEY":"HONEY"})
 		# LEVEL 8!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-#		14:
+		14:
+			get_tree().change_scene_to_file("res://Scenes/openingScene.tscn")
 #			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
 #			await %Dialogue.dialog("")
 			
