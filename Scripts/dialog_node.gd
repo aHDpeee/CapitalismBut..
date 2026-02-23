@@ -192,14 +192,14 @@ func f():
 			look_at_table()
 			%Words.AddWords({"MONEY":"HONEY"})
 		# LEVEL 8!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		14:
-			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
-			await %Dialogue.dialog("")
+#		14:
+#			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())
+#			await %Dialogue.dialog("")
 			
 			
 #	x - готово; p - в процессe; n! - не начинали, а надо бы;
-#   было - GIVE/LIVE - x, PRICES/MICES - x, BUY/GUY - x, FREE/TREE - x, THINK/BLINK - x, DEAL/MEAL - x, JUST/MUST - n!, TAKE/CAKE - x, RUN/FUN - x, BUSY/MUSY - x, CLIENT/GLIENT - x,
-#   PROFIT/OUTFIT - n!, COIN/JOIN - n!, MONEY/HONEY - n!
+#   было - GIVE/LIVE - x, PRICES/MICES - x, BUY/GUY - x, FREE/TREE - x, THINK/BLINK - x, DEAL/MEAL - x, JUST/MUST - x, TAKE/CAKE - x, RUN/FUN - x, BUSY/MUSY - x, CLIENT/GLIENT - x,
+#   PROFIT/OUTFIT - x, COIN/JOIN - x, MONEY/HONEY - x
 
 #  будет - WEALTH/HEALTH, CASH/DASH
 		

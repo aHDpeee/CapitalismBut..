@@ -33,7 +33,7 @@ constant_force = Vector3(0, -9.9, 0)
 script = ExtResource("1_ka838")
 
 [node name="Collision" type="CollisionShape3D" parent="." unique_id=30077847]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0054215193, -0.010221297, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1, -0.0041297674, -0.0096360985, 0)
 shape = SubResource("BoxShape3D_ka838")
 
 [node name="Shape" type="MeshInstance3D" parent="." unique_id=608263764]
