@@ -22,11 +22,11 @@ text = "Q"
 shape = SubResource("BoxShape3D_20200")
 
 [node name="shadow" type="Sprite3D" parent="." unique_id=1094731247]
-transform = Transform3D(0.06359305, 0, 0, 0, -4.5896957e-09, -0.105, 0, 0.105, -4.5896957e-09, 0, 0, 0)
+transform = Transform3D(0.042758666, 0, 0, 0, -3.2647616e-09, -0.105, 0, 0.07468903, -4.5896957e-09, 0, 0, 0)
 layers = 33792
 texture = SubResource("GradientTexture2D_fhyxq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1956646857]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(0.52, 0, 0, 0, -2.2729921e-08, 0.52, 0, -0.52, -2.2729921e-08, 0, 0, 0)
 visible = false
 mesh = SubResource("TextMesh_lisyl")

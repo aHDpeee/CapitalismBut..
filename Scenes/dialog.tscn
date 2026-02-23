@@ -3,6 +3,12 @@
 [ext_resource type="Script" uid="uid://c6krm2d0ts8br" path="res://Scripts/dialog.gd" id="1_irs7l"]
 [ext_resource type="FontFile" uid="uid://dp5tesm7w4dbp" path="res://Font/Doto-VariableFont_ROND,wght.ttf" id="2_87kay"]
 [ext_resource type="Shader" uid="uid://c61i1fkcn0eb0" path="res://Shaders/invert.gdshader" id="3_u40lh"]
+[ext_resource type="AudioStream" uid="uid://bwfdqtcjib7so" path="res://Sounds/freesound_community-coin-clatter-6-87110.mp3" id="4_gl4vm"]
+[ext_resource type="AudioStream" uid="uid://pehyhretq8bl" path="res://Sounds/freesound_crunchpixstudio-drop-coin-384921.mp3" id="5_ofp2y"]
+[ext_resource type="AudioStream" uid="uid://dy1ft01umupd1" path="res://Sounds/ribhavagrawal-coin-recieved-230517.mp3" id="6_3dls6"]
+[ext_resource type="AudioStream" uid="uid://cwy7udrt4s3j1" path="res://Sounds/a-short-fluttering-sound-of-a-falling-coin.mp3" id="8_ofp2y"]
+[ext_resource type="AudioStream" uid="uid://p31m5hadba4e" path="res://Sounds/universfield-spinning-coin-on-table-352448.mp3" id="8_y6rcn"]
+[ext_resource type="AudioStream" uid="uid://rsdpbb75mver" path="res://Sounds/sound-of-flipped-coin-in-hand-heads-or-tails.mp3" id="9_3dls6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ionbg"]
 shader = ExtResource("3_u40lh")
@@ -21,6 +27,16 @@ border_color = Color(0, 0, 0, 1)
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nas4"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2bvuo"]
+playback_mode = 1
+streams_count = 6
+stream_0/stream = ExtResource("4_gl4vm")
+stream_1/stream = ExtResource("5_ofp2y")
+stream_2/stream = ExtResource("6_3dls6")
+stream_3/stream = ExtResource("8_y6rcn")
+stream_4/stream = ExtResource("8_ofp2y")
+stream_5/stream = ExtResource("9_3dls6")
 
 [node name="Dialogue" type="Control" unique_id=1771129535]
 layout_mode = 3
@@ -64,3 +80,6 @@ theme_override_styles/background = SubResource("StyleBoxFlat_3nas4")
 [node name="Options" type="HBoxContainer" parent="VBox" unique_id=337516120]
 layout_mode = 2
 theme_override_constants/separation = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1014349915]
+stream = SubResource("AudioStreamRandomizer_2bvuo")

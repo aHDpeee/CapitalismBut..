@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://birtvlxw68d5v"]
+
+[ext_resource type="Script" uid="uid://brlnvtqipf8w" path="res://Scripts/view.gd" id="1_roflx"]
+[ext_resource type="PackedScene" uid="uid://gql3hjssgwej" path="res://Scenes/letterPlace.tscn" id="2_834bj"]
+
+[node name="View" type="Node3D" unique_id=518451539]
+script = ExtResource("1_roflx")
+
+[node name="C" parent="." unique_id=1601768901 instance=ExtResource("2_834bj")]
+transform = Transform3D(0.9999999, 0, 1.7484552e-07, 0, 1, 0, -1.7484552e-07, 0, 0.9999999, -0.04835394, 0, 0.0008354727)
+
+[node name="L" parent="." unique_id=487219525 instance=ExtResource("2_834bj")]
+transform = Transform3D(-4.371138e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, -4.371138e-08, -0.0039119045, 0, -0.010516923)
+
+[node name="I" parent="." unique_id=1457480686 instance=ExtResource("2_834bj")]
+transform = Transform3D(-4.371139e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371139e-08, 0.0018233629, 0, 0.02971813)
+
+[node name="E" parent="." unique_id=506393897 instance=ExtResource("2_834bj")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.026370049, 0, -0.05737634)
+
+[node name="N" parent="." unique_id=218899670 instance=ExtResource("2_834bj")]
+transform = Transform3D(-4.371138e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371138e-08, 0.056442507, 0, 0.008910814)
+
+[node name="T" parent="." unique_id=1237850093 instance=ExtResource("2_834bj")]
+transform = Transform3D(-0.9999894, 0, -0.0046075596, 0, 1, 0, 0.0046075596, 0, -0.9999894, -0.011239111, 0, -0.03734535)

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dppes8vl1hivx"]
+
+[ext_resource type="Script" uid="uid://brlnvtqipf8w" path="res://Scripts/view.gd" id="1_drvtf"]
+[ext_resource type="PackedScene" uid="uid://gql3hjssgwej" path="res://Scenes/letterPlace.tscn" id="2_bssht"]
+
+[node name="View" type="Node3D" unique_id=518451539]
+script = ExtResource("1_drvtf")
+
+[node name="b" parent="." unique_id=1601768901 instance=ExtResource("2_bssht")]
+transform = Transform3D(-0.50549173, 0, 0.86283135, 0, 1, 0, -0.86283135, 0, -0.50549173, -0.035932653, 0, -0.03211321)
+
+[node name="u" parent="." unique_id=487219525 instance=ExtResource("2_bssht")]
+transform = Transform3D(0.71146214, 0, -0.7027244, 0, 1, 0, 0.7027244, 0, 0.71146214, -0.049401216, 0, 0.014977608)
+
+[node name="s" parent="." unique_id=1457480686 instance=ExtResource("2_bssht")]
+transform = Transform3D(0.08418223, 0, -0.99645025, 0, 1, 0, 0.99645025, 0, 0.08418223, -0.002540432, 0, 0.010020649)
+
+[node name="y" parent="." unique_id=506393897 instance=ExtResource("2_bssht")]
+transform = Transform3D(0.5377853, 0, 0.84308183, 0, 1, 0, -0.84308183, 0, 0.5377853, 0.002263613, 0, -0.021221595)

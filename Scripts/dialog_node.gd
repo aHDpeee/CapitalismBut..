@@ -111,7 +111,7 @@ func f():
 			await timer(3.1)
 			# ЧЕЛ УХОДИТ
 			look_at_table()
-			%Words.AddWords({"JUST":"MUST"})
+			%Words.AddWords({"JUST":"DUST"})
 		# LEVEL 4!!!!!!!!
 		7:
 			%Words/makeView.add_child(Status.makeScene[Status.makeIndex].instantiate())

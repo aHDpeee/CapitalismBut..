@@ -7,7 +7,7 @@ var placed_letters = {}
 @export var rotation_fucked_uping: float = 10.0 
 
 func _ready():
-	if get_parent().name == 'test':
+	if 'test' in get_parent().name.to_lower():
 		return
 	setup_zones()
 	setup_letter_signals()

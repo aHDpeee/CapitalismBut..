@@ -6,9 +6,9 @@ var s =''
 #signal choosed()
 
 func _ready() -> void:
-	pass
+	#pass
 	#await get_tree().create_timer(3).timeout
-	#dialog('fucjk', 50.0, ['reta', 'gerta', 'terta'])
+	if $/root/Dialogue: 	dialog('fucsdfsdfsdfjk', 10.0, ['reta', 'gerta', 'terta'])
 	
 func dialog(text: String, speed := 50.0, choose := []):
 	#if name == '': s = '... \n'
@@ -22,6 +22,7 @@ func dialog(text: String, speed := 50.0, choose := []):
 		await get_tree().create_timer(1/speed).timeout
 		s+=text[i]
 		$VBox/DialogTextLabel.text = s
+		$AudioStreamPlayer.play()
 		
 	if choose != []:		
 		for i in range(0, len(choose)):

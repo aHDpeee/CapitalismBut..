@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cpqepscqq8u7g"]
+
+[ext_resource type="PackedScene" uid="uid://dw8ddvusrw010" path="res://Objects/opening.glb" id="1_npcsw"]
+
+[node name="Node3D" type="Node3D" unique_id=905836193]
+
+[node name="opening" parent="." unique_id=1678098590 instance=ExtResource("1_npcsw")]
