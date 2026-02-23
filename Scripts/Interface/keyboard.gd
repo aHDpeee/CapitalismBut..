@@ -20,7 +20,7 @@ func _ready() -> void:
 	#print(keysLetters)
 				
 func showLetters(s : String):
-	#print(keysLetters)
+	print(autoHide)
 	for k in s:
 		var t = create_tween()
 		t.set_trans(t.TRANS_EXPO)

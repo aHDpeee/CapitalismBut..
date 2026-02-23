@@ -19,7 +19,7 @@ func addLetter(alf,col=0,row=0, pos=Vector3(0,1,0), rot=Vector3.ZERO):
 		 #* Quaternion(Vector3.LEFT, rot.x)\
 		 #* Quaternion(Vector3.FORWARD, rot.z)
 		).normalized()
-		l.position = pos + line*(col-2)*0.1
+		l.position = pos + line*(col-1)*0.1
 		l.rotate_x(-PI*(0.45+randf()*0.15))
 		l.get_node("Shape").mesh = l.get_node("Shape").mesh.duplicate()
 		l.get_node("Shape/Outline").mesh = l.get_node("Shape/Outline").mesh.duplicate()

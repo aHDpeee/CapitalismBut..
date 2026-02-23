@@ -18,9 +18,9 @@ func f():
 	match Status.makeIndex:
 		# LEVEL 1!!!!
 		0:
-			%Keyboard.hideLetters("]q/z")
 			%Keyboard.autoHide = ""
 			await %Dialogue.dialog('Store? Here?')
+			%Keyboard.hideLetters("]q/z")
 
 			await timer(2)
 			var anss = await %Dialogue.dialog('I\'ve never seen it before',  50.0, ['fdfdsadf', 'asdasdsad'])

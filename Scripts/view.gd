@@ -4,7 +4,7 @@ var target_zones = {}
 var placed_letters = {}
 
 @export var position_fucked_uping: float = 0.2
-@export var rotation_fucked_uping: float = 1.0 
+@export var rotation_fucked_uping: float = 10.0
 
 func _ready():
 	if 'test' in get_parent().name.to_lower():
