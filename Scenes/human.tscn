@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bai00qs4jyss"]
+
+[ext_resource type="Script" uid="uid://b8x7m1wtdcr3k" path="res://Scenes/human.gd" id="1_j03jf"]
+[ext_resource type="PackedScene" uid="uid://bi4sanh386pg" path="res://Objects/human.gltf" id="2_073c6"]
+
+[node name="Human" type="Node3D" unique_id=411847624]
+script = ExtResource("1_j03jf")
+
+[node name="blockbench_export" parent="." unique_id=393242012 instance=ExtResource("2_073c6")]
