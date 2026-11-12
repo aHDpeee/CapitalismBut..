@@ -7,7 +7,8 @@
 [ext_resource type="Script" uid="uid://bx3gpfi08orj0" path="res://Scripts/dialog_node.gd" id="5_vi07p"]
 [ext_resource type="Texture2D" uid="uid://bcgwy6mpixp73" path="res://Textures/PRICEhint.png" id="5_wmepm"]
 [ext_resource type="PackedScene" uid="uid://ykk3of680eli" path="res://Scenes/Interface/keyboard.tscn" id="6_8dgsw"]
-[ext_resource type="PackedScene" uid="uid://bai00qs4jyss" path="res://Scenes/human.tscn" id="8_2ajjh"]
+[ext_resource type="PackedScene" uid="uid://c43a5coab0nk4" path="res://Scenes/transition.tscn" id="8_2ajjh"]
+[ext_resource type="PackedScene" path="res://Scenes/human.tscn" id="9_w8ovl"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cub8s"]
 
@@ -116,7 +117,7 @@ script = ExtResource("5_vi07p")
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=2073515477]
 layer = 14
 
-[node name="Transition" parent="CanvasLayer2" unique_id=1371778010 instance=ExtResource("8_2ajjh")]
-[node name="Human" parent="." unique_id=411847624 instance=ExtResource("8_2ajjh")]
-transform = Transform3D(-0.49995354, 0, 0.006815298, 0, 0.5, 0, -0.006815298, 0, -0.49995354, -0.013654262, 0.62092537, -1.7339401)
-visible = false
+[node name="Transition2" parent="CanvasLayer2" unique_id=1371778010 instance=ExtResource("8_2ajjh")]
+
+[node name="Human" parent="." unique_id=411847624 instance=ExtResource("9_w8ovl")]
+transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 0, 1.2120612, -1.8480935)
