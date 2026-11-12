@@ -1,3 +1,9 @@
-# Godot 4+ specific ignores
+# Godot editor/import cache
 .godot/
+
+# Local exports and build output
+/build/
+/exports/
+*.log
+
 /android/
